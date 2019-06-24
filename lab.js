@@ -42,6 +42,8 @@ class Lab {
           obj.position.set(0,0,0);
           lab.scene.add(obj);
       });
+
+      controls.update();
     }
 
 	animate() {
