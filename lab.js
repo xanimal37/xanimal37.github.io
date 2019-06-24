@@ -14,9 +14,12 @@ class Lab {
       document.body.appendChild( this.renderer.domElement );
 
       const light = new THREE.DirectionalLight( 0xffffff,2 );
-      light.position.set( 0, 5, 1 );
-      const ambient = new THREE.AmbientLight( 0xffffff,15);
+      light.position.set( 3, 3, 2 );
+      const light2 = new THREE.DirectionalLight( 0xffffff,1 );
+      light2.position.set( 0, 5, 1 );
+      const ambient = new THREE.AmbientLight( 0xffffff,10);
       this.scene.add( light );
+      this.scene.add(light2);
       this.scene.add( ambient );
 
   		const grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
