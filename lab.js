@@ -91,7 +91,7 @@ class Lab {
       );
 
       screen.position.set(0,4,0);
-      lab.scene.add(screen);
+      scene.add(screen);
 
 
     }
