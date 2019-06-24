@@ -30,7 +30,7 @@ class Lab {
   		grid.material.transparent = true;
   		this.scene.add( grid );
 
-      this.camera.position.z = 3;
+      this.camera.position.z = 5;
       this.camera.position.y=3;
 
       // model
