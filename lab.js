@@ -1,8 +1,16 @@
 class Lab {
     constructor(){
+      	if ( WEBGL.isWebGLAvailable() === false ) {    document.body.appendChild( WEBGL.getWebGLErrorMessage() );}
 
+        //state machine
+        this.modes = Object.freeze({
+          LOADING: Symbol('loading'),
+          READY:Symbol('ready')
+        });
+        
           this.init();
           this.animate();
+
     }
 
   init() {
