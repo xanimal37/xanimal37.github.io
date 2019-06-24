@@ -39,6 +39,7 @@ class Lab {
   		loader.load('assets/workstation_1.glb', function ( object ) {
 
   			lab.scene.add(object);
+      });
     }
 
 	animate() {
