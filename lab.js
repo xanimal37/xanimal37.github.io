@@ -2,12 +2,7 @@ class Lab {
     constructor(){
       	if ( WEBGL.isWebGLAvailable() === false ) {    document.body.appendChild( WEBGL.getWebGLErrorMessage() );}
 
-        //state machine
-        this.modes = Object.freeze({
-          LOADING: Symbol('loading'),
-          READY:Symbol('ready')
-        });
-        
+          this.loadModels();
           this.init();
           this.animate();
 
@@ -38,35 +33,7 @@ class Lab {
       this.camera.position.z = 5;
       this.camera.position.y=3;
 
-      // model
-  		const loader = new THREE.GLTFLoader();
-      const lab = this;
-  		loader.load('assets/workstation_1.glb', function (data) {
-          var obj = data.scene;
-          obj.name = "workbench1";
-          obj.position.set(0,0,0);
-          lab.scene.add(obj);
-          lab.scene.getObjectByName("workbench1").castShadow=true;
-      }
-    );
 
-      loader.load('assets/walls_floors.glb', function(data) {
-         var obj=data.scene;
-         obj.name="room";
-         obj.position.set(0,0,0);
-         lab.scene.add(obj);
-         lab.scene.getObjectByName("room").castShadow=true;
-      }
-    );
-
-    loader.load('assets/wallstation_1.glb', function(data) {
-       var obj=data.scene;
-       obj.name="wallstation";
-       obj.position.set(0,0,0);
-       lab.scene.add(obj);
-       lab.scene.getObjectByName("wallstation").castShadow=true;
-    }
-  );
 
       this.controls.update();
     }
@@ -77,4 +44,27 @@ class Lab {
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
     }
+
+  loadModels(){
+    const lab = this;
+    const pathstr="assets/";
+    var modelsToLoad=[
+      "screen.glb",
+      "tall_Shelf.glb",
+      "walls_floors.glb",
+      "wallstation_1.glb",
+      "workstation_1.glb"
+    ];
+
+    const loader = new THREE.GLTFLoader();
+
+    while(modelsToLoad.length>0){
+    loader.load(pathstr+modelsToLoad[0]', function(data) {
+       var obj=data.scene;
+       obj.position.set(0,0,0);
+       lab.scene.add(obj);
+       modelsToLoad.shift();
+    }
+  );
+  }
 }
