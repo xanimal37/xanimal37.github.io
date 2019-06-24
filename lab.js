@@ -47,7 +47,8 @@ class Lab {
     }
 
 	animate() {
-        //for now, just render the scene
+
+        requestAnimationFrame(animate);
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
     }
