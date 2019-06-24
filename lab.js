@@ -63,7 +63,7 @@ class Lab {
 	animate() {
       const lab = this;
       //check video
-      if(lab.video.readyState===lab.video.HAVE_ENOUGH_DATA){
+      if(this.video.readyState===this.video.HAVE_ENOUGH_DATA){
         videocanvasctx.drawImage(video,0,0);
         screenTexture.needsUpdate=true;
       }
