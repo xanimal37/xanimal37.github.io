@@ -45,9 +45,7 @@ class Lab {
       //set setSize
       videocanvas.width=640;
       videocanvas.height=480;
-      //make sure it's not transparent
-      videocanvasctx.fillStyle="#000000";
-      videocanvasctx.fillRect(0,0,640,480);
+  
       //add canvas to texture
       var screenTexture = new THREE.Texture(videocanvas);
       //add to material to put on screen
