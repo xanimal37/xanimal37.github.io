@@ -74,6 +74,7 @@ class Lab {
 
     createScreen() {
       var video = document.getElementById('video');
+      video.src="video/test.mp4";
       video.load();
       video.play();
       var texture = new THREE.VideoTexture(video);
