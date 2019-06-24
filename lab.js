@@ -60,7 +60,7 @@ class Lab {
 
     while (modelsToLoad.length>0){
     let model = modelsToLoad.pop();
-    loader.load('${model}', function(data) {
+    loader.load( `${model}`, function(data) {
        var obj=data.scene;
        obj.position.set(0,0,0);
        lab.scene.add(obj);
