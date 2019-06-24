@@ -73,6 +73,7 @@ class Lab {
     }
 
     createScreen() {
+      const lab = this;
       var video = document.getElementById('video');
       video.src="video/test.mp4";
       video.load();
@@ -90,7 +91,7 @@ class Lab {
       );
 
       screen.position.set(0,4,0);
-      this.scene.add(screen);
+      lab.scene.add(screen);
 
 
     }
