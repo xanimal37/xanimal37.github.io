@@ -2,6 +2,7 @@ class Lab {
     constructor(){
       	if ( WEBGL.isWebGLAvailable() === false ) {    document.body.appendChild( WEBGL.getWebGLErrorMessage() );}
 
+          this.createScreen();
           this.loadModels();
           this.init();
           this.animate();
