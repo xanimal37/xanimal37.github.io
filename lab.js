@@ -39,8 +39,10 @@ class Lab {
       const lab = this;
   		loader.load('assets/workstation_1.glb', function (data) {
           var obj = data.scene;
+          obj.name = "workbench1";
           obj.position.set(0,0,0);
           lab.scene.add(obj);
+          lab.scene.getObjectByName("workbench1").setPosition(0,0,3);
       });
 
       this.controls.update();
