@@ -34,6 +34,27 @@ class Lab {
       this.camera.position.z = 5;
       this.camera.position.y=3;
 
+      var video = document.createElement('video');
+          video.src="video/test.mp4";
+          video.load();
+          video.play();
+
+      //make canvas to play on
+      var videocanvas = document.createElement('canvas');
+      var videocanvasctx = videocanvas.getContext('2d');
+      //set setSize
+      videocanvas.width=640;
+      videocanvas.height=480;
+      //make sure it's not transparent
+      videocanvasctx.fillStyle=#000000;
+      videocanvasctx.fillRect(0,0,640,480);
+      //add canvas to texture
+      var screenTexture = new THREE.Texture(videocanvas);
+      //add to material to put on screen
+      var material = new THREE.MeshBasicMaterial({map:screenTexture,overdraw:0.5});
+      var geometry = new THREE.PlaneGeometry(2,1);
+      var screenMesh = new THREE.Mesh(geometry,material);
+
 
 
       this.controls.update();
@@ -41,6 +62,11 @@ class Lab {
 
 	animate() {
       const lab = this;
+      //check video
+      if(video.readyState===video.HAVE_ENOUGH_DATA){
+        videocanvasctx.drawImage(video,0,0);
+        screenTexture.needsUpdate=true;
+      }
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
@@ -70,29 +96,5 @@ class Lab {
           }
         );
       }
-    }
-
-    createScreen() {
-console.log(this);
-      var video = document.getElementById('video');
-      video.src="video/test.mp4";
-      video.load();
-      video.play();
-      var texture = new THREE.VideoTexture(video);
-      texture.needsUpdate;
-      texture.minFilter= THREE.LinearFilter;
-      texture.magFilter=THREE.LinearFilter;
-      texture.format = THREE.RGBFormat;
-      texture.crossOrigin='anonymous';
-
-      var screen = new THREE.Mesh(
-        new THREE.PlaneGeometry(2,1),
-        new THREE.MeshBasicMaterial({map:texture})
-      );
-
-      screen.position.set(0,4,0);
-    //  scene.add(screen);
-
-
     }
 }
