@@ -42,7 +42,7 @@ class Lab {
           obj.name = "workbench1";
           obj.position.set(0,0,0);
           lab.scene.add(obj);
-          lab.scene.getObjectByName("workbench1").position.set(0,0,3);
+          lab.scene.getObjectByName("workbench1").castShadow=true;
       });
 
       this.controls.update();
