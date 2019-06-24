@@ -51,6 +51,15 @@ class Lab {
       }
     );
 
+    loader.load('assets/wallstation.glb', function(data) {
+       var obj=data.scene;
+       obj.name="wallstation";
+       obj.position.set(0,0,0);
+       lab.scene.add(obj);
+       lab.scene.getObjectByName("wallstation").castShadow=true;
+    }
+  );
+
       this.controls.update();
     }
 
