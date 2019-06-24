@@ -37,7 +37,7 @@ class Lab {
       // model
   		const loader = new THREE.GLTFLoader();
       const lab = this;
-  		loader.load('assets/workstation_1.gltf', function (data) {
+  		loader.load('assets/workstation_1.glb', function (data) {
           var obj = data.scene;
           obj.position.set(0,0,0);
           lab.scene.add(obj);
