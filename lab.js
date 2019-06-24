@@ -29,12 +29,7 @@ class Lab {
     }
 
 	animate() {
-        const lab = this;
-        requestAnimationFrame( function(){ lab.animate(); } );
-
-        this.cube.rotation.x += 0.01;
-        this.cube.rotation.y += 0.01;
-
+    
         this.renderer.render( this.scene, this.camera );
     }
 }
