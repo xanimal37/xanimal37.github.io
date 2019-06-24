@@ -34,7 +34,7 @@ class Lab {
       this.camera.position.z = 5;
       this.camera.position.y=3;
 
-      var video = document.createElement('video');
+      const video = document.createElement('video');
           video.src="video/test.mp4";
           video.load();
           video.play();
@@ -63,7 +63,7 @@ class Lab {
 	animate() {
       const lab = this;
       //check video
-      if(video.readyState===video.HAVE_ENOUGH_DATA){
+      if(lab.video.readyState===lab.video.HAVE_ENOUGH_DATA){
         videocanvasctx.drawImage(video,0,0);
         screenTexture.needsUpdate=true;
       }
