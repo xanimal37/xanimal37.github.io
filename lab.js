@@ -20,12 +20,6 @@ class Lab {
       this.scene.add( light );
       this.scene.add( ambient );
 
-      // ground
-  		const groundPlane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20, 20), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
-  		groundPlane.rotation.x = - Math.PI / 2;
-  		groundPlane.receiveShadow = true;
-  		this.scene.add( groundPlane );
-
   		const grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
   		grid.material.opacity = 0.2;
   		grid.material.transparent = true;
@@ -43,7 +37,17 @@ class Lab {
           obj.position.set(0,0,0);
           lab.scene.add(obj);
           lab.scene.getObjectByName("workbench1").castShadow=true;
-      });
+      }
+    );
+
+      loader.load('assets/walls_floors.glb', function(data)) {
+         var obj=data.scene;
+         obj.name="room";
+         obj.position.set(0,0,0);
+         lab.scene.add(obj);
+         lab.scene.getObjectByName("room").castShadow=true;
+      }
+    );
 
       this.controls.update();
     }
