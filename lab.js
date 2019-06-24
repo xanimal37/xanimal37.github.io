@@ -2,7 +2,7 @@ class Lab {
     constructor(){
       	if ( WEBGL.isWebGLAvailable() === false ) {    document.body.appendChild( WEBGL.getWebGLErrorMessage() );}
 
-          this.createScreen();
+
           this.loadModels();
           this.init();
           this.animate();
@@ -45,7 +45,7 @@ class Lab {
       //set setSize
       videocanvas.width=640;
       videocanvas.height=480;
-  
+
       //add canvas to texture
       var screenTexture = new THREE.Texture(videocanvas);
       //add to material to put on screen
