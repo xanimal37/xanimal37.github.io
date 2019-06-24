@@ -14,7 +14,7 @@ class Lab {
       document.body.appendChild( this.renderer.domElement );
 
       const light = new THREE.DirectionalLight( 0xffffff );
-      light.position.set( 0, 20, 10 );
+      light.position.set( 0, 5, 1 );
       const ambient = new THREE.AmbientLight( 0x707070 ); // soft white light
 
       this.scene.add( light );
