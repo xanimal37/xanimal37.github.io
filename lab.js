@@ -38,7 +38,7 @@ class Lab {
       const lab = this;
   		loader.load('assets/workstation_1.glb', function (gltf) {
         const material = new THREE.MeshLambertMaterial();
-  			for (var i=0;i<gltf.scene.children.length) {
+  			for (var i=0;i<gltf.scene.children.length;i++) {
           var mesh=gltf.scene.children[i];
           mesh.material=material;
           lab.scene.add(mesh);
