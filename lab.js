@@ -43,7 +43,7 @@ class Lab {
           lab.scene.add(obj);
       });
 
-      controls.update();
+      this.controls.update();
     }
 
 	animate() {
