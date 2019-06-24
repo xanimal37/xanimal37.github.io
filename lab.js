@@ -53,7 +53,9 @@ class Lab {
       "assets/tall_Shelf.glb",
       "assets/walls_floors.glb",
       "assets/wallstation_1.glb",
-      "assets/workstation_1.glb"
+      "assets/workstation_1.glb",
+      "assets/faucet.glb",
+      "assets/wall_cabinets.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
