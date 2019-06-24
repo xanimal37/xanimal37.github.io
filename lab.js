@@ -13,9 +13,9 @@ class Lab {
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
       document.body.appendChild( this.renderer.domElement );
 
-      const light = new THREE.DirectionalLight( 0xffffff );
+      const light = new THREE.DirectionalLight( 0xffffff,2 );
       light.position.set( 0, 5, 1 );
-      const ambient = new THREE.AmbientLight( 0xffffff,5 ); 
+      const ambient = new THREE.AmbientLight( 0xffffff,15);
       this.scene.add( light );
       this.scene.add( ambient );
 
