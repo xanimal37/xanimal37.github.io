@@ -53,6 +53,8 @@ class Lab {
       var geometry = new THREE.PlaneGeometry(2,1);
       var screenMesh = new THREE.Mesh(geometry,material);
 
+      this.scene.add(screenMesh);
+
 
 
       this.controls.update();
