@@ -34,39 +34,11 @@ class Lab {
       this.camera.position.z = 5;
       this.camera.position.y=3;
 
-      const video = document.createElement('video');
-          video.src="video/test.mp4";
-          video.load();
-          video.play();
-
-      //make canvas to play on
-      var videocanvas = document.createElement('canvas');
-      var videocanvasctx = videocanvas.getContext('2d');
-      //set setSize
-      videocanvas.width=640;
-      videocanvas.height=480;
-
-      //add canvas to texture
-      var screenTexture = new THREE.Texture(videocanvas);
-      //add to material to put on screen
-      var material = new THREE.MeshBasicMaterial({map:screenTexture});
-      var geometry = new THREE.PlaneGeometry(2,1);
-      var screenMesh = new THREE.Mesh(geometry,material);
-
-      this.scene.add(screenMesh);
-
-
-
       this.controls.update();
     }
 
 	animate() {
-      const lab = this;
-      //check video
-      if(this.video.readyState===this.video.HAVE_ENOUGH_DATA){
-        videocanvasctx.drawImage(video,0,0);
-        screenTexture.needsUpdate=true;
-      }
+        const lab = this;
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
