@@ -36,13 +36,10 @@ class Lab {
       // model
   		const loader = new THREE.GLTFLoader();
       const lab = this;
-  		loader.load('assets/workstation_1.glb', function (gltf) {
-        const material = new THREE.MeshLambertMaterial();
-  			for (var i=0;i<gltf.scene.children.length;i++) {
-          var mesh=gltf.scene.children[i];
-          mesh.material=material;
-          lab.scene.add(mesh);
-        }
+  		loader.load('assets/workstation_1.gltf', function (data) {
+          var obj = data.scene;
+          obj.position.set(0,0,0);
+          scene.add(obj);
       });
     }
 
