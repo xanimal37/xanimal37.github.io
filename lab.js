@@ -40,7 +40,7 @@ class Lab {
       }
     );
 
-      loader.load('assets/walls_floors.glb', function(data)) {
+      loader.load('assets/walls_floors.glb', function(data) {
          var obj=data.scene;
          obj.name="room";
          obj.position.set(0,0,0);
