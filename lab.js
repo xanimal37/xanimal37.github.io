@@ -70,4 +70,26 @@ class Lab {
         );
       }
     }
+
+    createScreen() {
+      var video = document.getElementById('video');
+      video.load();
+      video.play();
+      var texture = new THREE.VideoTexture(video);
+      texture.needsUpdate;
+      texture.minFilter= THREE.LinearFilter;
+      texture.magFilter=THREE.LinearFilter;
+      texture.format = THREE.RGBFormat;
+      texture.crossOrigin='anonymous';
+
+      var screen = new THREE.Mesh(
+        new THREE.PlaneGeometry(2,1),
+        new THREE.MeshBasicMaterial({map:texture})
+      );
+
+      screen.position.set(0,4,0);
+      this.scene.add(screen);
+
+
+    }
 }
