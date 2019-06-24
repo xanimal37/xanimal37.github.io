@@ -47,19 +47,19 @@ class Lab {
 
   loadModels(){
     const lab = this;
-    const pathstr="assets/";
+
     var modelsToLoad=[
-      "screen.glb",
-      "tall_Shelf.glb",
-      "walls_floors.glb",
-      "wallstation_1.glb",
-      "workstation_1.glb"
+      "assets/screen.glb",
+      "assets/tall_Shelf.glb",
+      "assets/walls_floors.glb",
+      "assets/wallstation_1.glb",
+      "assets/workstation_1.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
 
     while(modelsToLoad.length>0){
-    loader.load(pathstr+modelsToLoad[0]', function(data) {
+    loader.load(modelsToLoad[0]', function(data) {
        var obj=data.scene;
        obj.position.set(0,0,0);
        lab.scene.add(obj);
