@@ -39,7 +39,7 @@ class Lab {
   		loader.load('assets/workstation_1.glb', function (gltf) {
 
   			for (var i=0;i<gltf.scene.children.length) {
-          mesh=gltf.scene.children[i];
+          var mesh=gltf.scene.children[i];
           lab.scene.add(mesh);
         }
       });
