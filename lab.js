@@ -32,6 +32,13 @@ class Lab {
 
       this.camera.position.z = 3;
       this.camera.position.y=3;
+
+      // model
+  		const loader = new THREE.GLTFLoader();
+      const lab = this;
+  		loader.load('assets/workstation_1.glb', function ( object ) {
+
+  			lab.scene.add(object);
     }
 
 	animate() {
