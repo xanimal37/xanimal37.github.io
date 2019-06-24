@@ -20,17 +20,18 @@ class Lab {
       this.scene.add( ambient );
 
       // ground
-  		var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20, 20), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
-  		mesh.rotation.x = - Math.PI / 2;
-  		mesh.receiveShadow = true;
-  		this.scene.add( mesh );
+  		const groundPlane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20, 20), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+  		groundPlane.rotation.x = - Math.PI / 2;
+  		groundPlane.receiveShadow = true;
+  		this.scene.add( groundPlane );
 
-  		var grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
+  		const grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
   		grid.material.opacity = 0.2;
   		grid.material.transparent = true;
   		this.scene.add( grid );
 
       this.camera.position.z = 3;
+      this.camera.position.y=3;
     }
 
 	animate() {
