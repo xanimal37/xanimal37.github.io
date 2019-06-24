@@ -49,7 +49,7 @@ class Lab {
       //add canvas to texture
       var screenTexture = new THREE.Texture(videocanvas);
       //add to material to put on screen
-      var material = new THREE.MeshBasicMaterial({map:screenTexture,overdraw:0.5});
+      var material = new THREE.MeshBasicMaterial({map:screenTexture});
       var geometry = new THREE.PlaneGeometry(2,1);
       var screenMesh = new THREE.Mesh(geometry,material);
 
