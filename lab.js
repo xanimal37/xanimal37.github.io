@@ -47,8 +47,8 @@ class Lab {
     }
 
 	animate() {
-
-        requestAnimationFrame(this.animate);
+      const lab = this;
+        requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
     }
