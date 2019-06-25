@@ -49,12 +49,15 @@ class Lab {
 
     var modelsToLoad=[
       "assets/screen.glb",
+      "assets/equipment.glb"
       "assets/tall_Shelf.glb",
       "assets/walls_floors.glb",
       "assets/wallstation_1.glb",
       "assets/workstation_1.glb",
       "assets/faucet.glb",
-      "assets/wall_cabinets.glb"
+      "assets/wall_cabinets.glb",
+      "assets/autoclave.glb",
+      "assets/stool.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
