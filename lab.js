@@ -49,7 +49,7 @@ class Lab {
 
     var modelsToLoad=[
       "assets/screen.glb",
-      "assets/equipment.glb"
+      "assets/equipment.glb",
       "assets/tall_Shelf.glb",
       "assets/walls_floors.glb",
       "assets/wallstation_1.glb",
