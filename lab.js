@@ -79,7 +79,7 @@ class Lab {
   onMouseDown(event){
     //if we need to use mousemove, then update raycaster in aniamtion lop
     this.mouse.x = (event.clientX/window.innerWidth)*2-1;
-    this.mouse.y = (event.clientY/window.innerHeight)*2+1;
+    this.mouse.y = -(event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.meshList);
