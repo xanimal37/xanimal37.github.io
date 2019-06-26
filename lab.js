@@ -34,6 +34,32 @@ class Lab {
       this.camera.position.z = 5;
       this.camera.position.y=3;
 
+      //video test
+      const video = document.createElement('video');
+      video.src = "video/test.mp4";
+      video.load;
+      video.play();
+
+      const videoImage = document.createElement('canvas');
+      videoImage.width = 480;
+      videoImage.height= 240;
+
+      const videoImageContext = videoImage.getContext('2d');
+      videoImageContext.fillStyle="#000000";
+      videoImageContext.fillRect(0,0,videoImage.width,videoImage.height);
+
+      const videoTexture = new THREE.Texture(videoImage);
+      videoTexture.minFilter = THREE.LinearFilter;
+      videoText.magFilter = THREE.LinearFilter;
+
+      var movieMaterial = new THREE.MeshBasicMaterial({map:videoTexture});
+      const movieGeometry = new THREE.PlaneGeometry(240,100,4,4);
+      const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
+      movieScreen.position.set(0,2,0);
+      this.scene.add(movieScreen);
+
+
+
       this.controls.update();
     }
 
