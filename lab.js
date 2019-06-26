@@ -62,7 +62,7 @@ class Lab {
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(0,2,0);
       //use for click detection
-      movieSceen.name = "Screen";
+      movieScreen.name = "Screen";
       this.scene.add(movieScreen);
 
       window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
