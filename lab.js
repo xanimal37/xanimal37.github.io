@@ -10,6 +10,10 @@ class Lab {
     }
 
   init() {
+    //vectors used to detect mouse click location and intesersec object
+    var raycaster = new THREE.Raycaster();
+    var mouse = new THREE.Vector2();
+    //set up scnee
     this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
       this.renderer = new THREE.WebGLRenderer();
@@ -38,7 +42,7 @@ class Lab {
       const video = document.createElement('video');
       video.src = "video/test.mp4";
       video.load;
-      video.play();
+      //video.play(); --autoplay forbidden by most browsers use click event
 
       const videoImage = document.createElement('canvas');
       videoImage.width = 480;
@@ -50,7 +54,7 @@ class Lab {
 
       const videoTexture = new THREE.Texture(videoImage);
       videoTexture.minFilter = THREE.LinearFilter;
-      videoText.magFilter = THREE.LinearFilter;
+      videoTexture.magFilter = THREE.LinearFilter;
 
       var movieMaterial = new THREE.MeshBasicMaterial({map:videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(240,100,4,4);
@@ -62,6 +66,16 @@ class Lab {
 
       this.controls.update();
     }
+
+  onDocumentMouseDown(event) {
+      //update the mouse variable
+      mouse.x = (event.clientX/this.renderer.domElement.clientWidth)*2-1;
+      mouse.y = (event.clientY/this.renderer.domElement.clientHeight)*2+1;
+
+      raycaster.setFromCamera(mouse,this.camera);
+      var intersects = raycaster.intersectObjects(objects,recursiveFlag);
+      console.log(intersects[0].name);
+  }
 
 	animate() {
         const lab = this;
