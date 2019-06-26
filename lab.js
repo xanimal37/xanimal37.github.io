@@ -82,10 +82,8 @@ class Lab {
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(this.scene.children,true);
-    for(var i=0;i<this.scene.children.length;i++){
-      console.log(this.scene.children[i]);
-    }
+    var intersects = this.raycaster.intersectObjects(this.meshList);
+    console.log(intersects);
   }
 
 	animate() {
@@ -99,7 +97,7 @@ class Lab {
 
   loadModels(){
     const lab = this;
-
+    lab.meshList=[]; //create an array to hold the meshes of the scene to make them clickable later
     var modelsToLoad=[
       "assets/screen.glb",
       "assets/equipment.glb",
@@ -122,6 +120,7 @@ class Lab {
             for(var i=0;i<data.scene.children.length;i++){
               var obj = data.scene.children[i];
               obj.position.set(0,0,0);
+              lab.meshList.add(obj);
               lab.scene.add(obj);
             }
           }
