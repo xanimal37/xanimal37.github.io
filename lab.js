@@ -77,22 +77,17 @@ class Lab {
   }
 
   onMouseDown(event){
+    //if we need to use mousemove, then update raycaster in aniamtion lop
     this.mouse.x = (event.clientX/window.innerWidth)*2-1;
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(this.scene.children,false);
+    var intersects = this.raycaster.intersectObjects(this.scene.children);
     console.log(intersects[0]);
-    if(intersects[0].name=="Screen"){
-      console.log("you clicked the screen");
-    }
-
   }
 
 	animate() {
         const lab = this;
-
-
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
@@ -121,6 +116,7 @@ class Lab {
     while (modelsToLoad.length>0){
         let model = modelsToLoad.pop();
         loader.load( `${model}`, function(data) {
+          //get each model from the scene(that s what we get from the glb file, a scene)
             for(var i=0;i<data.scene.children.length;i++){
               var obj = data.scene.children[i];
               obj.position.set(0,0,0);
