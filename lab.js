@@ -41,7 +41,7 @@ class Lab {
 
       //video test
       this.video = document.createElement('video');
-      this.video.src = "video/test.mp4";
+      this.video.src = "video/ICDC.mp4";
       this.video.load;
       //video.play(); --autoplay forbidden by most browsers use click event
 
