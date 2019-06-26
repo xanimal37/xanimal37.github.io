@@ -121,9 +121,11 @@ class Lab {
     while (modelsToLoad.length>0){
         let model = modelsToLoad.pop();
         loader.load( `${model}`, function(data) {
-            var obj=data.scene;
-            obj.position.set(0,0,0);
-            lab.scene.add(obj);
+            for(var i=0;i<data.scene.children.length){
+              var obj = data.scene.children[i];
+              obj.position.set(0,0,0);
+              lab.scene.add(obj);
+            }
           }
         );
       }
