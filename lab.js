@@ -84,7 +84,7 @@ class Lab {
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children);
     console.log(intersects[0]);
-    if(intersects[0].name=="Screen"){
+    if(intersects[0].name==="Screen"){
       console.log("Turn on the movei");
     }
   }
