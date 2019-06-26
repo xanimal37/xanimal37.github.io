@@ -65,7 +65,7 @@ class Lab {
       movieScreen.name = "Screen";
       this.scene.add(movieScreen);
 
-      window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
+      //window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
       window.addEventListener('mousedown',function(){lab.onMouseDown(event);},false);
 
       this.controls.update();
@@ -81,7 +81,7 @@ class Lab {
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(this.scene.children, false);
+    var intersects = this.raycaster.intersectObjects();
     console.log(intersects[0]);
   }
 
