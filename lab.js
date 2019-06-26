@@ -61,6 +61,8 @@ class Lab {
       const movieGeometry = new THREE.PlaneGeometry(5,3,4,4);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(0,2,0);
+      //use for click detection
+      movieSceen.name = "Screen";
       this.scene.add(movieScreen);
 
       window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
@@ -76,7 +78,8 @@ class Lab {
   }
 
   onMouseDown(event){
-    console.log("Clicked!");
+    var intersects = this.raycaster.intersectObjects(this.scene.children);
+    console.log(intersects[0].name);
   }
 
 	animate() {
