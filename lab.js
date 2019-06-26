@@ -5,6 +5,7 @@ class Lab {
 
           this.loadModels();
           this.init();
+            window.addEventListener('mousemove',this.onMouseMove,false);
           this.animate();
 
     }
@@ -62,7 +63,7 @@ class Lab {
       movieScreen.position.set(0,2,0);
       this.scene.add(movieScreen);
 
-      window.addEventListener('mousemove',onMouseMove,false);
+
 
 
       this.controls.update();
