@@ -13,7 +13,7 @@ class Lab {
     //vectors used to detect mouse click location and intesersec object
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
-    window.addEventListener('mousemove',this.onMouseMove,false);
+
     //set up scnee
     this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -63,16 +63,14 @@ class Lab {
       movieScreen.position.set(0,2,0);
       this.scene.add(movieScreen);
 
-
-
-
+      window.addEventListener('mousemove',function(){lab.onMouseMove();},false);
       this.controls.update();
     }
 
   onMouseMove(event) {
     this.mouse.x = (event.clientX/window.innerWidth)*2-1;
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
-    console.log(mouse.x,mouse.y);
+    console.log(this.mouse.x,this.mouse.y);
   }
 
 	animate() {
