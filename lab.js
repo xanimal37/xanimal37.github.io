@@ -72,20 +72,22 @@ class Lab {
     }
 
   onMouseMove(event) {
-    this.mouse.x = (event.clientX/window.innerWidth)*2-1;
-    this.mouse.y = (event.clientY/window.innerHeight)*2+1;
-    console.log(this.mouse.x,this.mouse.y);
+    //this.mouse.x = (event.clientX/window.innerWidth)*2-1;
+    //this.mouse.y = (event.clientY/window.innerHeight)*2+1;
   }
 
   onMouseDown(event){
-    var intersects = this.raycaster.intersectObjects(this.scene.children);
-    console.log(this.scene.children);
+    this.mouse.x = (event.clientX/window.innerWidth)*2-1;
+    this.mouse.y = (event.clientY/window.innerHeight)*2+1;
+    //for mouse interaction
+    this.raycaster.setFromCamera(this.mouse,this.camera);
+    var intersects = this.raycaster.intersectObjects(this.scene.children, false);
+    console.log(intersects[0]);
   }
 
 	animate() {
         const lab = this;
-        //for mouse interaction
-        this.raycaster.setFromCamera(this.mouse,this.camera);
+
 
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
