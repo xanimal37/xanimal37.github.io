@@ -31,7 +31,7 @@ class Lab {
       this.scene.add(light2);
       this.scene.add( ambient );
 
-  		const grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
+  		const grid = new THREE.GridHelper( 20, 20, 0xffffff, 0xffffff );
   		grid.material.opacity = 0.2;
   		grid.material.transparent = true;
   		this.scene.add( grid );
