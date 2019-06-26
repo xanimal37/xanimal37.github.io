@@ -40,9 +40,9 @@ class Lab {
       this.camera.position.y=3;
 
       //video test
-      const video = document.createElement('video');
-      video.src = "video/test.mp4";
-      video.load;
+      this.video = document.createElement('video');
+      this.video.src = "video/test.mp4";
+      this.video.load;
       //video.play(); --autoplay forbidden by most browsers use click event
 
       const videoImage = document.createElement('canvas');
@@ -84,7 +84,7 @@ class Lab {
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children);
     if(intersects[0].object.name=="Screen"){
-      lab.video.play();
+      this.video.play();
     }
 
   }
