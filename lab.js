@@ -79,13 +79,14 @@ class Lab {
 
   onMouseDown(event){
     var intersects = this.raycaster.intersectObjects(this.scene.children);
-    console.log(intersects[0].name);
+    console.log(this.scene.children);
   }
 
 	animate() {
         const lab = this;
         //for mouse interaction
         this.raycaster.setFromCamera(this.mouse,this.camera);
+
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
