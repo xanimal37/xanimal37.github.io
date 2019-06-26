@@ -84,6 +84,7 @@ class Lab {
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.meshList);
     console.log(intersects);
+    console.log(this.meshList);
   }
 
 	animate() {
