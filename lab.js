@@ -11,8 +11,8 @@ class Lab {
 
   init() {
     //vectors used to detect mouse click location and intesersec object
-    var raycaster = new THREE.Raycaster();
-    var mouse = new THREE.Vector2();
+    this.raycaster = new THREE.Raycaster();
+    this.mouse = new THREE.Vector2();
     //set up scnee
     this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -62,26 +62,27 @@ class Lab {
       movieScreen.position.set(0,2,0);
       this.scene.add(movieScreen);
 
+      window.addEventListener('mousemove',onMouseMove,false);
 
 
       this.controls.update();
     }
 
-  onDocumentMouseDown(event) {
-      //update the mouse variable
-      mouse.x = (event.clientX/this.renderer.domElement.clientWidth)*2-1;
-      mouse.y = (event.clientY/this.renderer.domElement.clientHeight)*2+1;
-
-      raycaster.setFromCamera(mouse,this.camera);
-      var intersects = raycaster.intersectObjects(objects,recursiveFlag);
-      console.log(intersects[0].name);
+  onMouseMove(event) {
+    mouse.x = (event.clientX/window.innerWidth)*2-1;
+    mouse.y = (event.clientY/window.innerHeight)*2+1;
+    console.log(mouse.x,mouse.y);
   }
 
 	animate() {
         const lab = this;
+        //for mouse interaction
+        this.raycaster.setFromCamera(this.mouse,this.camera);
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
         this.renderer.render( this.scene, this.camera );
+
+
     }
 
   loadModels(){
