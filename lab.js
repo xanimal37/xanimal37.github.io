@@ -46,8 +46,8 @@ class Lab {
       //video.play(); --autoplay forbidden by most browsers use click event
 
       const videoImage = document.createElement('canvas');
-      videoImage.width = 480;
-      videoImage.height= 240;
+      videoImage.width = 854;
+      videoImage.height= 480;
 
       this.videoImageContext = videoImage.getContext('2d');
       this.videoImageContext.fillStyle="#000000";
@@ -60,8 +60,8 @@ class Lab {
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(2,1,1,1);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(-1,2.5,0);
-      movieScreen.rotation.set(0,Math.PI/2,0);
+      movieScreen.position.set(-2,2.2,0);
+      movieScreen.rotation.set(0,Math.PI/2,0.17);
       //use for click detection
       movieScreen.name = "Screen";
       this.scene.add(movieScreen);
