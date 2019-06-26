@@ -82,7 +82,7 @@ class Lab {
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children,true);
-    console.log(intersects[0].name);
+    console.log(intersects[0]);
     if(intersects[0].name=="Screen"){
       console.log("you clicked the screen");
     }
