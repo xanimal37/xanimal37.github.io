@@ -84,7 +84,7 @@ class Lab {
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children);
     if(intersects[0].object.name=="Screen"){
-      this.video.play();
+      lab.video.play();
     }
 
   }
