@@ -57,7 +57,7 @@ class Lab {
       videoTexture.magFilter = THREE.LinearFilter;
 
       var movieMaterial = new THREE.MeshBasicMaterial({map:videoTexture});
-      const movieGeometry = new THREE.PlaneGeometry(240,100,4,4);
+      const movieGeometry = new THREE.PlaneGeometry(5,3,4,4);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(0,2,0);
       this.scene.add(movieScreen);
