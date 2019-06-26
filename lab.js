@@ -58,9 +58,10 @@ class Lab {
       this.videoTexture.magFilter = THREE.LinearFilter;
 
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
-      const movieGeometry = new THREE.PlaneGeometry(5,3,4,4);
+      const movieGeometry = new THREE.PlaneGeometry(2,1,1,1);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(0,2,0);
+      movieScreen.position.set(-1,2.5,0);
+      movieScreen.rotation.set(0,Math.PI/2,0);
       //use for click detection
       movieScreen.name = "Screen";
       this.scene.add(movieScreen);
