@@ -49,15 +49,15 @@ class Lab {
       videoImage.width = 480;
       videoImage.height= 240;
 
-      const videoImageContext = videoImage.getContext('2d');
-      videoImageContext.fillStyle="#000000";
-      videoImageContext.fillRect(0,0,videoImage.width,videoImage.height);
+      this.videoImageContext = videoImage.getContext('2d');
+      this.videoImageContext.fillStyle="#000000";
+      this.videoImageContext.fillRect(0,0,videoImage.width,videoImage.height);
 
-      const videoTexture = new THREE.Texture(videoImage);
-      videoTexture.minFilter = THREE.LinearFilter;
-      videoTexture.magFilter = THREE.LinearFilter;
+      this.videoTexture = new THREE.Texture(videoImage);
+      this.videoTexture.minFilter = THREE.LinearFilter;
+      this.videoTexture.magFilter = THREE.LinearFilter;
 
-      var movieMaterial = new THREE.MeshBasicMaterial({map:videoTexture});
+      var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(5,3,4,4);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(0,2,0);
@@ -93,6 +93,12 @@ class Lab {
         const lab = this;
         requestAnimationFrame( function(){ lab.animate(); } );
         this.controls.update();
+        if(this.video.readyState === this.video.HAVE_ENOUGH_DATA){
+          this.videoImageContext.drawImage(this.video,0,0);
+          if(this.videoTexture) {
+            this.videoTexture.needsUpdate = true;
+          }
+        }
         this.renderer.render( this.scene, this.camera );
 
 
