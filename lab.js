@@ -64,6 +64,8 @@ class Lab {
       this.scene.add(movieScreen);
 
       window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
+      window.addEventListener('mousedown',function(){lab.onMouseDown(event);},false);
+
       this.controls.update();
     }
 
@@ -71,6 +73,10 @@ class Lab {
     this.mouse.x = (event.clientX/window.innerWidth)*2-1;
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
     console.log(this.mouse.x,this.mouse.y);
+  }
+
+  onMouseDown(event){
+    console.log("Clicked!");
   }
 
 	animate() {
