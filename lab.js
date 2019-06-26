@@ -63,7 +63,7 @@ class Lab {
       movieScreen.position.set(0,2,0);
       this.scene.add(movieScreen);
 
-      window.addEventListener('mousemove',function(){lab.onMouseMove();},false);
+      window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
       this.controls.update();
     }
 
