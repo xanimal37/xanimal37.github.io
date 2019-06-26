@@ -120,7 +120,7 @@ class Lab {
             for(var i=0;i<data.scene.children.length;i++){
               var obj = data.scene.children[i];
               obj.position.set(0,0,0);
-              lab.meshList.add(obj);
+              lab.meshList.push(obj);
               lab.scene.add(obj);
             }
           }
