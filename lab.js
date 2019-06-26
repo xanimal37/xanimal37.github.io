@@ -81,7 +81,7 @@ class Lab {
     this.mouse.y = (event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(scene.children);
+    var intersects = this.raycaster.intersectObjects(this.scene.children);
     console.log(intersects[0]);
   }
 
