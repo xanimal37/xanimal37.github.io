@@ -64,8 +64,8 @@ class Lab {
       const movieGeometry = new THREE.PlaneGeometry(1,.56);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(-2,2.2,0);
-      movieScreen.rotation.set(0,Math.PI/2,0);
-      movieScreen.rotation.set(0.17,Math.PI/2,0);
+      movieScreen.rotateY(Math.PI/2);
+
       //use for click detection
       movieScreen.name = "Screen";
       this.scene.add(movieScreen);
