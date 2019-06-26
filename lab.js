@@ -37,7 +37,7 @@ class Lab {
   		this.scene.add( grid );
 
       const axesHelper = new THREE.AxesHelper(5);
-      scene.add(axesHelper);
+      this.scene.add(axesHelper);
 
       this.camera.position.z = 5;
       this.camera.position.y=3;
