@@ -114,16 +114,13 @@ class Lab {
     const lab = this;
     lab.meshList=[]; //create an array to hold the meshes of the scene to make them clickable later
     var modelsToLoad=[
-      "assets/screen.glb",
+      "assets/tv.glb",
       "assets/equipment.glb",
-      "assets/tall_Shelf.glb",
-      "assets/walls_floors.glb",
-      "assets/wallstation_1.glb",
-      "assets/workstation_1.glb",
-      "assets/faucet.glb",
-      "assets/wall_cabinets.glb",
-      "assets/autoclave.glb",
-      "assets/stool.glb"
+      "assets/stations.glb",
+      "assets/room.glb",
+      "assets/shelving.glb",
+      "assets/fixtures.glb",
+      "assets/furniture.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
