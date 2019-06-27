@@ -78,14 +78,14 @@ class Lab {
     }
 
   toggleMovie() {
-    if(isMoviePlaying==false){
-      isMoviePlaying=true;
-      video.play();
+    if(this.isMoviePlaying==false){
+      this.isMoviePlaying=true;
+      this.video.play();
       console.log("started movie");
     }
-    if(isMoviePlaying==true){
-      isMoviePlaying=false;
-      video.stop();
+    if(this.isMoviePlaying==true){
+      this.isMoviePlaying=false;
+      this.video.stop();
       console.log("stopped movie");
     }
   }
