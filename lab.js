@@ -63,7 +63,7 @@ class Lab {
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(1,.56);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(-2,1.8,.3);
+      movieScreen.position.set(-2,1.85,.4);
       movieScreen.rotateY(Math.PI/2);
       movieScreen.rotateX(0.17);
 
