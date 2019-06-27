@@ -123,15 +123,17 @@ class Lab {
         let model = modelsToLoad.pop();
         loader.load( `${model}`, function(data) {
           //get each model from the scene(that s what we get from the glb file, a scene)
-            for(var i=0;i<data.scene.children.length;i++){
-              var obj = data.scene.children[i];
-              console.log(i + " " + data.scene.children[i].name);
-              obj.position.set(0,0,0);
-              lab.meshList.push(obj);
-              lab.scene.add(obj);
+            data.scene.traverse(function(child){
+              if(child instance of THREE.Mesh){
+                console.log(child.name);
+                child.position.set(0,0,0);
+                lab.meshList.push(child);
+                lab.scene.add(child);
             }
           }
         );
       }
+    );
     }
+}
 }
