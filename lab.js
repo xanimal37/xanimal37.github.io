@@ -151,8 +151,6 @@ class Lab {
                 console.log(child.name);
                 child.position.set(0,0,0);
                 child.material=material;
-                child.castShadow = true;
-                child.receiveShadow=true;
                 lab.meshList.push(child);
                 }
               });
