@@ -69,12 +69,26 @@ class Lab {
       //use for click detection
       movieScreen.name = "Screen";
       this.scene.add(movieScreen);
+      this.isMoviePlaying =false; //initialize movie as not playing
 
       //window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
       window.addEventListener('mousedown',function(){lab.onMouseDown(event);},false);
 
       this.controls.update();
     }
+
+  toggleMovie() {
+    if(isMoviePlaying==false){
+      isMoviePlaying=true;
+      video.play();
+      console.log("started movie");
+    }
+    if(isMoviePlaying==true){
+      isMoviePlaying=false;
+      video.stop();
+      console.log("stopped movie");
+    }
+  }
 
   onMouseMove(event) {
     //this.mouse.x = (event.clientX/window.innerWidth)*2-1;
@@ -88,8 +102,9 @@ class Lab {
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children);
+    //check for intersection with video screen
     if(intersects[0].object.name=="Screen"){
-      this.video.play();
+      this.toggleMovie();
     }
 
   }
