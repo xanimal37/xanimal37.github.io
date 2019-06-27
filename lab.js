@@ -65,6 +65,7 @@ class Lab {
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
       movieScreen.position.set(-2,2.2,0);
       movieScreen.rotateY(Math.PI/2);
+      movieScreen.rotateX(0.17);
 
       //use for click detection
       movieScreen.name = "Screen";
