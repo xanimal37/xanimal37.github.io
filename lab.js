@@ -150,6 +150,9 @@ class Lab {
               if(child instanceof THREE.Mesh){
                 console.log(child.name);
                 child.position.set(0,0,0);
+                child.material=material;
+                child.castShadow = true;
+                cast.receiveShadow=true;
                 lab.meshList.push(child);
                 }
               });
