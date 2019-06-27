@@ -152,7 +152,7 @@ class Lab {
                 child.position.set(0,0,0);
                 child.material=material;
                 child.castShadow = true;
-                cast.receiveShadow=true;
+                child.receiveShadow=true;
                 lab.meshList.push(child);
                 }
               });
