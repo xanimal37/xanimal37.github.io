@@ -63,7 +63,7 @@ class Lab {
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(1,.56);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(-2,1.85,.4);
+      movieScreen.position.set(-2,1.87,.45);
       movieScreen.rotateY(Math.PI/2);
       movieScreen.rotateX(0.17);
 
@@ -131,6 +131,7 @@ class Lab {
           //get each model from the scene(that s what we get from the glb file, a scene)
             for(var i=0;i<data.scene.children.length;i++){
               var obj = data.scene.children[i];
+              console.log(i + " " + data.scene.children[i].name);
               obj.position.set(0,0,0);
               lab.meshList.push(obj);
               lab.scene.add(obj);
