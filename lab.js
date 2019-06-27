@@ -121,7 +121,9 @@ class Lab {
       "assets/stations.glb",
       "assets/shelving.glb"
     ];
-    var material = new THREE.MeshPhongMaterial({color:0xff0000});
+    var material = new THREE.MeshPhongMaterial({color:0x666666});
+    material.specular = 0xffffff;
+    material.reflection=0.5;
 
     const loader = new THREE.GLTFLoader();
 
@@ -133,7 +135,6 @@ class Lab {
               if(child instanceof THREE.Mesh){
                 console.log(child.name);
                 child.position.set(0,0,0);
-                child.material.wireframe=true;
                 lab.meshList.push(child);
                 }
               });
