@@ -2,10 +2,9 @@ class Lab {
     constructor(){
       	if ( WEBGL.isWebGLAvailable() === false ) {    document.body.appendChild( WEBGL.getWebGLErrorMessage() );}
 
-
-          this.loadModels();
-          this.init();
-          this.animate();
+      this.init();
+      this.loadModels();
+      this.animate();
 
     }
 
