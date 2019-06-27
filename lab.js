@@ -17,6 +17,7 @@ class Lab {
     this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
       this.renderer = new THREE.WebGLRenderer();
+      this.renderer.shadowMap.enabled=true; //shadow test
       this.renderer.setSize( window.innerWidth, window.innerHeight );
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
       document.body.appendChild( this.renderer.domElement );
@@ -25,6 +26,7 @@ class Lab {
       light.position.set( 3, 3, 2 );
       const light2 = new THREE.DirectionalLight( 0xffffff,1 );
       light2.position.set( 0, 5, 1 );
+      light2.castShadow=true; //shadow test
       const ambient = new THREE.AmbientLight( 0xffffff,10);
       this.scene.add( light );
       this.scene.add(light2);
@@ -149,6 +151,8 @@ class Lab {
             data.scene.traverse(function(child){
               if(child instanceof THREE.Mesh){
                 child.position.set(0,0,0);
+                child.castShadow=true;
+                child.receiveShadow=true;
                 lab.meshList.push(child);
                 }
               });
