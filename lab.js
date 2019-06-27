@@ -63,7 +63,7 @@ class Lab {
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(1,.56);
       const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(-2,2,.5);
+      movieScreen.position.set(-2,1.8,.3);
       movieScreen.rotateY(Math.PI/2);
       movieScreen.rotateX(0.17);
 
@@ -114,13 +114,13 @@ class Lab {
     const lab = this;
     lab.meshList=[]; //create an array to hold the meshes of the scene to make them clickable later
     var modelsToLoad=[
-      "assets/tv.glb",
-      "assets/equipment.glb",
-      "assets/stations.glb",
       "assets/room.glb",
+      "assets/stations.glb",
       "assets/shelving.glb",
       "assets/fixtures.glb",
-      "assets/furniture.glb"
+      "assets/shelving.glb",
+      "assets/equipment.glb",
+      "assets/tv.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
