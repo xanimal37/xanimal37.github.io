@@ -139,20 +139,21 @@ class Lab {
       "assets/furniture.glb",
       "assets/tv.glb",
       "assets/stations.glb",
-      "assets/shelving.glb"
+      "assets/shelving.glb",
+      "assets/extras.glb"
     ];
 
     const loader = new THREE.GLTFLoader();
 
     while (modelsToLoad.length>0){
-        let model = modelsToLoad.pop();
+        let model = modelsToLoad.pop();1
         loader.load( `${model}`, function(data) {
           //get each model from the scene(that s what we get from the glb file, a scene)
             data.scene.traverse(function(child){
               if(child instanceof THREE.Mesh){
                 child.position.set(0,0,0);
-                child.castShadow=true;
-                child.receiveShadow=true;
+                child.castShadow=true; //shadow test
+                child.receiveShadow=true; //shadow test
                 lab.meshList.push(child);
                 }
               });
