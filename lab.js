@@ -83,7 +83,7 @@ class Lab {
       this.video.play();
       console.log("started movie");
     }
-    if(this.isMoviePlaying==true){
+    else{
       this.isMoviePlaying=false;
       this.video.pause();
       console.log("stopped movie");
