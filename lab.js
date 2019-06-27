@@ -129,9 +129,13 @@ class Lab {
                 console.log(child.name);
                 child.position.set(0,0,0);
                 lab.meshList.push(child);
-                lab.scene.add(child);
                 }
               });
+              for(var i=0;i<lab.meshList.length;i++){
+                lab.scene.add(lab.meshList[i]);
+                  console.log(lab.meshList[i].name);
+              }
+              lab.meshList=[];
           });
     }
   }
