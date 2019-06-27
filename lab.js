@@ -85,7 +85,7 @@ class Lab {
     }
     if(this.isMoviePlaying==true){
       this.isMoviePlaying=false;
-      this.video.stop();
+      this.video.pause();
       console.log("stopped movie");
     }
   }
