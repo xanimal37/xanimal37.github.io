@@ -154,7 +154,7 @@ class Lab {
           //get each model from the scene(that s what we get from the glb file, a scene)
             data.scene.traverse(function(child){
               if(child instanceof THREE.Mesh){
-                child.position.set(0,0,0);
+              
                 child.castShadow=true; //shadow test
                 child.receiveShadow=true; //shadow test
                 lab.meshList.push(child);
