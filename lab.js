@@ -15,6 +15,8 @@ class Lab {
 
     //set up scnee
     this.scene = new THREE.Scene();
+      this.clock = new THREE.Clock();
+
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
       this.renderer = new THREE.WebGLRenderer({antialias:true});
       this.renderer.shadowMap.enabled=true; //shadow test
@@ -108,7 +110,7 @@ class Lab {
     this.mouse.y = -(event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(this.scene.children,true);
+    var intersects = this.raycaster.intersectObjects(this.scene.children,true);//recurseive(gets children)
     console.log(intersects[0].object);
     //check for intersection with video screen
     if(intersects[0].object.name=="Screen"){
@@ -120,6 +122,7 @@ class Lab {
 	animate() {
         const lab = this;
         requestAnimationFrame( function(){ lab.animate(); } );
+        var delta = this.clock.getDelta();
         this.controls.update();
         if(this.video.readyState === this.video.HAVE_ENOUGH_DATA){
           this.videoImageContext.drawImage(this.video,0,0);
@@ -128,7 +131,7 @@ class Lab {
           }
         }
         this.renderer.render( this.scene, this.camera );
-
+        this.projectorMixer.update(delta);
 
     }
 
@@ -150,9 +153,12 @@ class Lab {
 
     while (assetsToLoad.length>0){
         let asset = assetsToLoad.pop();
-        loader.load( `${asset}`, function(data) {
-          lab.scene.add(data.scene);
+        loader.load( `${asset}`, function(gltf) {
+          lab.scene.add(gltf.scene);
+          gltf.animations;
 
+          lab.projectorMixer=new THREE.AnimationMixer(gltf.scene);
+          lab.projectorMixer.clipAction(gltf.animations[0]).play();
 
           });
     }
