@@ -72,6 +72,8 @@ class Lab {
       movieScreen.position.set(-2.05,1.87,.43);
       movieScreen.rotateY(Math.PI/2);
       movieScreen.rotateX(0.15);
+      //animation mixers
+      this.projectorMixer;
 
       //use for click detection
       movieScreen.name = "Screen";
@@ -131,8 +133,9 @@ class Lab {
           }
         }
         this.renderer.render( this.scene, this.camera );
+        if(this.projectorMixer!=null){
         this.projectorMixer.update(delta);
-
+        }
     }
 
   loadModels(){
