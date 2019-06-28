@@ -150,7 +150,7 @@ class Lab {
 
     while (assetsToLoad.length>0){
         let asset = assetsToLoad.pop();
-        loader.load( `${model}`, function(data) {
+        loader.load( `${asset}`, function(data) {
           lab.scene.add(data.scene);
 
 
