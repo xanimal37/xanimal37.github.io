@@ -134,8 +134,8 @@ class Lab {
 
   loadModels(){
     const lab = this;
-    lab.meshList=[]; //create an array to hold the meshes of the scene to make them clickable later
-    var modelsToLoad=[
+
+    var assetsToLoad=[
       "assets/room.glb",
       "assets/fixtures.glb",
       "assets/equipment.glb",
@@ -148,22 +148,12 @@ class Lab {
 
     const loader = new THREE.GLTFLoader();
 
-    while (modelsToLoad.length>0){
-        let model = modelsToLoad.pop();1
+    while (assetsToLoad.length>0){
+        let asset = assetsToLoad.pop();
         loader.load( `${model}`, function(data) {
-          //get each model from the scene(that s what we get from the glb file, a scene)
-            data.scene.traverse(function(child){
-              if(child instanceof THREE.Mesh){
-              
-                child.castShadow=true; //shadow test
-                child.receiveShadow=true; //shadow test
-                lab.meshList.push(child);
-                }
-              });
-              for(var i=0;i<lab.meshList.length;i++){
-                lab.scene.add(lab.meshList[i]);
-              }
-              lab.meshList=[];
+          lab.scene.add(data.scene);
+
+
           });
     }
   }
