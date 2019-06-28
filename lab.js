@@ -161,7 +161,9 @@ class Lab {
           gltf.animations;
 
           var projMixer=new THREE.AnimationMixer(gltf.scene);
+          if(gltf.animations.length>0){
           projMixer.clipAction(gltf.animations[0]).play();
+        }
           lab.mixers.push(projMixer);
 
           });
