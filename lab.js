@@ -108,7 +108,7 @@ class Lab {
     this.mouse.y = -(event.clientY/window.innerHeight)*2+1;
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
-    var intersects = this.raycaster.intersectObjects(this.scene.children);
+    var intersects = this.raycaster.intersectObjects(this.scene.children,true);
     console.log(intersects[0].object);
     //check for intersection with video screen
     if(intersects[0].object.name=="Screen"){
