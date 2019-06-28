@@ -5,7 +5,6 @@ class Lab {
       this.init();
       this.loadModels();
       this.animate();
-
     }
 
   init() {
@@ -73,7 +72,7 @@ class Lab {
       movieScreen.rotateY(Math.PI/2);
       movieScreen.rotateX(0.15);
       //animation mixers
-      this.projectorMixer;
+      this.mixers=[];
 
       //use for click detection
       movieScreen.name = "Screen";
@@ -84,6 +83,7 @@ class Lab {
       window.addEventListener('mousedown',function(){lab.onMouseDown(event);},false);
 
       this.controls.update();
+
     }
 
   toggleMovie() {
@@ -133,8 +133,8 @@ class Lab {
           }
         }
         this.renderer.render( this.scene, this.camera );
-        if(this.projectorMixer!=null){
-        this.projectorMixer.update(delta);
+        if(this.mixers.length>0){
+        this.mixers[0].update(delta);
         }
     }
 
@@ -160,8 +160,9 @@ class Lab {
           lab.scene.add(gltf.scene);
           gltf.animations;
 
-          lab.projectorMixer=new THREE.AnimationMixer(gltf.scene);
-          lab.projectorMixer.clipAction(gltf.animations[0]).play();
+          var projMixer=new THREE.AnimationMixer(gltf.scene);
+          projMixer.clipAction(gltf.animations[0]).play();
+          lab.mixers.push(projMixer);
 
           });
     }
