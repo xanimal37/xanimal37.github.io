@@ -136,7 +136,7 @@ class Lab {
 
   loadModels(){
     const lab = this;
-
+    lab.mixers =[];
     var assetsToLoad=[
       "assets/test.glb"
       //"assets/room.glb",
@@ -158,14 +158,15 @@ class Lab {
           gltf.animations;
 
           var testMixer=new THREE.AnimationMixer(gltf.scene);
+          lab.mixers.push(testMixer);
           if(gltf.animations.length>0){
-        
+
               console.log(gltf.animations[0].name);
               console.log(gltf.animations[1].name);
               const coneAct = testMixer.clipAction(gltf.animations[0]);
-              const cubeAct = testMixer.clipAction(gltf.animations[1]);
+              //const cubeAct = testMixer.clipAction(gltf.animations[1]);
               coneAct.play();
-              cubeAct.play();
+              //cubeAct.play();
               }
       });
   }
