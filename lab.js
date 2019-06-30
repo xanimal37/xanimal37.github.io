@@ -138,8 +138,7 @@ class Lab {
     const lab = this;
 
     var assetsToLoad=[
-      "assets/test.glb",
-      "assets/test2.glb"
+      "assets/test.glb"
       //"assets/room.glb",
       //"assets/fixtures.glb",
       //"assets/equipment.glb",
@@ -160,12 +159,11 @@ class Lab {
 
           var testMixer=new THREE.AnimationMixer(gltf.scene);
           if(gltf.animations.length>0){
-            console.log(gltf.scene.name + "has animations");
-          testMixer.clipAction(gltf.animations[0]).play();
-        }
-          lab.mixers.push(testMixer);
-
-          });
-    }
+              gltf.animations.forEach( function ( clip ) {
+	             mixer.clipAction( clip ).play();
+             });
+              }
+      });
   }
+}
 }
