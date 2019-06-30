@@ -159,9 +159,7 @@ class Lab {
 
           var testMixer=new THREE.AnimationMixer(gltf.scene);
           if(gltf.animations.length>0){
-              gltf.animations.forEach( function ( clip ) {
-	             mixer.clipAction( clip ).play();
-             });
+              console.log("there are animations");
               }
       });
   }
