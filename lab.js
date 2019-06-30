@@ -161,6 +161,8 @@ class Lab {
           if(gltf.animations.length>0){
               console.log("there are animations");
               console.log(gltf.animations.length);
+              console.log(gltf.animations[0].name);
+              console.log(gltf.animations[1].name);
               }
       });
   }
