@@ -27,13 +27,9 @@ class Lab {
       light.position.set( 3, 3, 2 );
       //light AxesHelpe
       const lightHelper = new THREE.DirectionalLightHelper(light,5);
-      const light2 = new THREE.DirectionalLight( 0xffffff,1 );
-      light2.position.set( 0, 5, 1 );
-      light2.castShadow=true; //shadow test
       const ambient = new THREE.AmbientLight( 0xffffff,10);
       this.scene.add( light );
       this.scene.add(lightHelper);
-      this.scene.add(light2);
       this.scene.add( ambient );
 
   		const grid = new THREE.GridHelper( 20, 20, 0xffffff, 0xffffff );
@@ -160,11 +156,11 @@ class Lab {
           lab.scene.add(gltf.scene);
           gltf.animations;
 
-          var projMixer=new THREE.AnimationMixer(gltf.scene);
+          var testMixer=new THREE.AnimationMixer(gltf.scene);
           if(gltf.animations.length>0){
-          projMixer.clipAction(gltf.animations[0]).play();
+          testMixer.clipAction(gltf.animations[0]).play();
         }
-          lab.mixers.push(projMixer);
+          lab.mixers.push(testMixer);
 
           });
     }
