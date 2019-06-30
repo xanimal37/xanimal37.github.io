@@ -158,6 +158,7 @@ class Lab {
 
           var testMixer=new THREE.AnimationMixer(gltf.scene);
           if(gltf.animations.length>0){
+            console.log(gltf.scene + "has animations");
           testMixer.clipAction(gltf.animations[0]).play();
         }
           lab.mixers.push(testMixer);
