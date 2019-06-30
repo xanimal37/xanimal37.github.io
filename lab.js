@@ -138,6 +138,7 @@ class Lab {
     const lab = this;
 
     var assetsToLoad=[
+      "assets/test.glb",
       "assets/room.glb",
       "assets/fixtures.glb",
       "assets/equipment.glb",
