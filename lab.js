@@ -163,6 +163,10 @@ class Lab {
               console.log(gltf.animations.length);
               console.log(gltf.animations[0].name);
               console.log(gltf.animations[1].name);
+              const coneAct = testMixer.clipAction(gltf.animations[0]);
+              const cubeAct = testMixer.clipAction(gltf.animations[1]);
+              coneAct.play();
+              cubeAct.play();
               }
       });
   }
