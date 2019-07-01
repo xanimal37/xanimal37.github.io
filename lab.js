@@ -138,7 +138,6 @@ class Lab {
     const lab = this;
     lab.mixers =[];
     var assetsToLoad=[
-      "assets/test.glb",
       "assets/test3.glb"
       //"assets/room.glb",
       //"assets/fixtures.glb",
