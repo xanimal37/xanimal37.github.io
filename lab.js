@@ -20,6 +20,7 @@ class Lab {
       this.renderer = new THREE.WebGLRenderer({antialias:true});
       this.renderer.gammaOutput = true;
       this.renderer.gammaFactor = 2.2;
+      this.renderer.physicallyCorrectLights = true;
     //  this.renderer.shadowMap.enabled=true; //shadow test
       this.renderer.setSize( window.innerWidth, window.innerHeight );
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
@@ -160,20 +161,7 @@ class Lab {
         let asset = assetsToLoad.pop();
         loader.load( `${asset}`, function(gltf) {
           lab.scene.add(gltf.scene);
-          gltf.animations;
-
-          var testMixer=new THREE.AnimationMixer(gltf.scene);
-          lab.mixers.push(testMixer);
-          if(gltf.animations.length>0){
-
-              console.log(gltf.animations[0].name);
-              console.log(gltf.animations[1].name);
-              const coneAct = testMixer.clipAction(gltf.animations[0]);
-              const cubeAct = testMixer.clipAction(gltf.animations[1]);
-              coneAct.play();
-              cubeAct.play();
-              }
-      });
+          });
   }
 }
 }
