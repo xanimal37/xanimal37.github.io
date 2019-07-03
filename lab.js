@@ -155,7 +155,13 @@ class Lab {
     while (assetsToLoad.length>0){
         let asset = assetsToLoad.pop();
         loader.load( `${asset}`, function(gltf) {
+          gltf.animations;
           lab.scene.add(gltf.scene);
+
+          var testMixer = new AnimationMixer(gltf);
+          var action = testMixer.clipAction(gltf.animations[0]);
+          lab.mixers.push(testMixer);
+          action.play();
           });
   }
 }
