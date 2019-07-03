@@ -129,8 +129,8 @@ class Lab {
           }
         }
           if(this.mixers.length>0){
-            this.mixers[0].update(delta);
-        }
+            this.mixers.forEach( ( mixer ) => { mixer.update( delta );
+            }
 
         this.renderer.render( this.scene, this.camera );
 
