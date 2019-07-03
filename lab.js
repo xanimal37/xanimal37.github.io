@@ -115,7 +115,6 @@ class Lab {
     if(intersects[0].object.name=="Screen"){
       this.toggleMovie();
     }
-
   }
 
 	animate() {
@@ -159,7 +158,7 @@ class Lab {
 
           var testMixer = new THREE.AnimationMixer(gltf.scene);
           testMixer.clipAction(gltf.animations[0]).play();
-          console.log(gltf.animations[0].name);
+          console.log("There are " + gltf.animations.length + " animations in the scene.");
           });
   }
 }
