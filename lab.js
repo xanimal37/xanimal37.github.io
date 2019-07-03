@@ -160,6 +160,7 @@ class Lab {
 
           var testMixer = new AnimationMixer(gltf);
           var action = testMixer.clipAction(gltf.animations[0]);
+          console.log(gltf.animations[0].name);
           lab.mixers.push(testMixer);
           action.play();
           });
