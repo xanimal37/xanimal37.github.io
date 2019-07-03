@@ -158,7 +158,7 @@ class Lab {
           gltf.animations;
           lab.scene.add(gltf.scene);
 
-          var testMixer = new AnimationMixer(gltf);
+          var testMixer = new THREE.AnimationMixer(gltf);
           var action = testMixer.clipAction(gltf.animations[0]);
           console.log(gltf.animations[0].name);
           lab.mixers.push(testMixer);
