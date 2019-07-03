@@ -128,9 +128,9 @@ class Lab {
             this.videoTexture.needsUpdate = true;
           }
         }
-          if(this.mixers.length>0){
-            this.mixers.forEach( ( mixer ) => { mixer.update( delta );
-            }
+
+        this.mixers.forEach( ( mixer ) => { mixer.update( delta ); } );
+
 
         this.renderer.render( this.scene, this.camera );
 
