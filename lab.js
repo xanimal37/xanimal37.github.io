@@ -122,16 +122,18 @@ class Lab {
         requestAnimationFrame( function(){ lab.animate(); } );
         var delta = this.clock.getDelta();
         this.controls.update();
-        if(this.video.readyState === this.video.HAVE_ENOUGH_DATA){
+          if(this.video.readyState === this.video.HAVE_ENOUGH_DATA){
           this.videoImageContext.drawImage(this.video,0,0);
           if(this.videoTexture) {
             this.videoTexture.needsUpdate = true;
           }
         }
-        this.renderer.render( this.scene, this.camera );
-        if(this.mixers.length>0){
-        this.mixers[0].update(delta);
+          if(this.mixers.length>0){
+            this.mixers[0].update(delta);
         }
+
+        this.renderer.render( this.scene, this.camera );
+
     }
 
   loadModels(){
