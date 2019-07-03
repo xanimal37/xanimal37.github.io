@@ -160,6 +160,7 @@ class Lab {
 
           var testMixer = new THREE.AnimationMixer(gltf.scene);
           testMixer.clipAction(gltf.animations[0]).play();
+          lab.mixers.push(testMixer);
           console.log("There are " + gltf.animations.length + " animations in the scene.");
           });
   }
