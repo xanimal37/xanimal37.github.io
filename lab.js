@@ -159,7 +159,8 @@ class Lab {
           testMixer.clipAction(gltf.animations[0]).play();
           testMixer.clipAction(gltf.animations[1]).play();
           testMixer.clipAction(gltf.animations[2]).play();
-          testMixer.clipActin(gltf.animations[3]).play();
+          testMixer.clipAction(gltf.animations[3]).play();
+          testMixer.clipAction(gltf.animations[4]).play();
 
           lab.mixers.push(testMixer);
           console.log("There are " + gltf.animations.length + " animations in the scene.");
