@@ -44,6 +44,7 @@ class Lab {
 
       this.camera.position.set(0,3,5);
       const ogCamPosition = this.camera.position;
+      const moviePosition = new THREE.Vector3(0,2,0);
 
       //video test
       this.video = document.createElement('video');
@@ -89,10 +90,12 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
+        moveCamera(this.ogCamPosition,this.moviePosition);
         break;
       case true:
         this.isMoviePlaying=false;
         this.video.pause();
+        moveCamera(this.moviePosition,this.ogCamPosition);
         break;
       default:
         break;
@@ -100,7 +103,7 @@ class Lab {
   }
 
   moveCamera(loc1,loc2) {
-
+    this.camera.position.set(loc2);
   }
 
   onMouseMove(event) {
