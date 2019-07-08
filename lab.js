@@ -27,13 +27,13 @@ class Lab {
       document.body.appendChild( this.renderer.domElement );
 
       const light = new THREE.DirectionalLight( 0xffffff,1 );
-      light.position.set( 3, 2.6, 2 );
+      light.position.set( 2, 2, 2 );
       light.castShadow=true;
       //const light2 = new THREE.DirectionalLight(0xffffff,1);
       //light2.position.set(-3,2,-1);
       //light AxesHelpe
       const lightHelper = new THREE.DirectionalLightHelper(light,5);
-      const ambient = new THREE.AmbientLight( 0xffffff,1);
+      const ambient = new THREE.AmbientLight( 0xffffff,2);
       this.scene.add( light );
       //this.scene.add(light2);
       this.scene.add(lightHelper);
@@ -157,7 +157,7 @@ class Lab {
           gltf.scene.traverse(function(node) {
             if(node instanceof THREE.Mesh) {node.castShadow=true;}
           });
-          
+
           lab.scene.add(gltf.scene);
 
           var testMixer = new THREE.AnimationMixer(gltf.scene);
