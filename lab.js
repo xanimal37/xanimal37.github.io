@@ -44,7 +44,10 @@ class Lab {
 
       this.camera.position.set(0,3,5);
       const ogCamPosition = this.camera.position;
-      const moviePosition = new THREE.Vector3(0,2,0);
+      this.ogCamLookAt = new Vector3(0,0,0);
+      //camera positions and rotations
+      const moviePosition = new THREE.Vector3(0,3,0);
+      const movieLook = new THREE.Vector3(-2.05,1.87,.43);
 
       //video test
       this.video = document.createElement('video');
@@ -90,20 +93,21 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        this.moveCamera(this.ogCamPosition,this.moviePosition);
+        this.moveCamera(this.ogCamPosition,this.moviePosition, this.movieLook);
         break;
       case true:
         this.isMoviePlaying=false;
         this.video.pause();
-        this.moveCamera(this.moviePosition,this.ogCamPosition);
+        this.moveCamera(this.moviePosition,this.ogCamPosition, this.ogCamLookAt);
         break;
       default:
         break;
     }
   }
 
-  moveCamera(loc1,loc2) {
+  moveCamera(loc1,loc2, look) {
     this.camera.position.set(loc2);
+    this.camera.lookAT(look);
   }
 
   onMouseMove(event) {
