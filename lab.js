@@ -26,15 +26,15 @@ class Lab {
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
       document.body.appendChild( this.renderer.domElement );
 
-      const light = new THREE.DirectionalLight( 0xffffff,1 );
-      light.position.set( 3, 3, 2 );
-      const light2 = new THREE.DirectionalLight(0xffffff,1);
-      light2.position.set(-3,2,-1);
+      //const light = new THREE.DirectionalLight( 0xffffff,1 );
+      //light.position.set( 3, 3, 2 );
+      //const light2 = new THREE.DirectionalLight(0xffffff,1);
+      //light2.position.set(-3,2,-1);
       //light AxesHelpe
-      const lightHelper = new THREE.DirectionalLightHelper(light,5);
+      //const lightHelper = new THREE.DirectionalLightHelper(light,5);
       const ambient = new THREE.AmbientLight( 0xffffff,6);
-      this.scene.add( light );
-      this.scene.add(light2);
+      //this.scene.add( light );
+      //this.scene.add(light2);
       //this.scene.add(lightHelper);
       this.scene.add( ambient );
 
