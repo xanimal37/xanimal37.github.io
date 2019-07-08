@@ -35,11 +35,8 @@ class Lab {
       const ambient = new THREE.AmbientLight( 0xffffff,6);
       this.scene.add( light );
       this.scene.add(light2);
-      this.scene.add(lightHelper);
+      //this.scene.add(lightHelper);
       this.scene.add( ambient );
-
-      const axesHelper = new THREE.AxesHelper(5);
-      this.scene.add(axesHelper);
 
       this.camera.position.z = 5;
       this.camera.position.y=3;
