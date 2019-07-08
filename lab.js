@@ -90,12 +90,12 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        moveCamera(this.ogCamPosition,this.moviePosition);
+        this.moveCamera(this.ogCamPosition,this.moviePosition);
         break;
       case true:
         this.isMoviePlaying=false;
         this.video.pause();
-        moveCamera(this.moviePosition,this.ogCamPosition);
+        this.moveCamera(this.moviePosition,this.ogCamPosition);
         break;
       default:
         break;
