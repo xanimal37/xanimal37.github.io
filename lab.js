@@ -22,6 +22,7 @@ class Lab {
       this.renderer.gammaFactor = 2.2;
       this.renderer.physicallyCorrectLights = true;
       this.renderer.shadowMap.enabled=true; //shadow test
+      this.renderer.shadowMap.type=THREE.PCFShadowMap;
       this.renderer.setSize( window.innerWidth, window.innerHeight );
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
       document.body.appendChild( this.renderer.domElement );
@@ -39,8 +40,8 @@ class Lab {
       this.scene.add(lightHelper);
       this.scene.add( ambient );
 
-      this.camera.position.z = 5;
-      this.camera.position.y=3;
+      this.camera.position.set(0,3,5);
+      const ogCamPosition = this.camera.position;
 
       //video test
       this.video = document.createElement('video');
@@ -94,6 +95,10 @@ class Lab {
       default:
         break;
     }
+  }
+
+  moveCamera(loc1,loc2) {
+
   }
 
   onMouseMove(event) {
@@ -169,6 +174,9 @@ class Lab {
 
           lab.mixers.push(testMixer);
           console.log("There are " + gltf.animations.length + " animations in the scene.");
+          for(var i=0;i<gltf.animations.length;i++) {
+            console.log(gltf.animations[i].name);
+          }
           });
   }
 }
