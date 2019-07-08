@@ -31,7 +31,7 @@ class Lab {
       //spotlight.position.set( 2, 2, 2 );
       spotlight.castShadow=true;
       spotlight.shadow.mapSize.height = 1024;
-      spotlight.shadow.mapsize.width=1024;
+      spotlight.shadow.mapSize.width=1024;
       //const light2 = new THREE.DirectionalLight(0xffffff,1);
       //light2.position.set(-3,2,-1);
       //light AxesHelpe
