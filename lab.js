@@ -160,7 +160,7 @@ class Lab {
         let asset = assetsToLoad.pop();
         loader.load( `${asset}`, function(gltf) {
           gltf.scene.traverse(function(node) {
-            if(node instanceof THREE.Mesh) {node.castShadow=true;}
+            if(node instanceof THREE.Mesh) {node.castShadow=true; node.receiveShadow=true;}
           });
 
           lab.scene.add(gltf.scene);
