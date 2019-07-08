@@ -27,7 +27,7 @@ class Lab {
       document.body.appendChild( this.renderer.domElement );
 
       const light = new THREE.DirectionalLight( 0xffffff,1 );
-      light.position.set( 3, 3, 2 );
+      light.position.set( 3, 2.6, 2 );
       light.castShadow=true;
       //const light2 = new THREE.DirectionalLight(0xffffff,1);
       //light2.position.set(-3,2,-1);
@@ -154,6 +154,10 @@ class Lab {
     while (assetsToLoad.length>0){
         let asset = assetsToLoad.pop();
         loader.load( `${asset}`, function(gltf) {
+          gltf.scene.traverse(function(node) {
+            if(node instanceof THREE.Mesh) {node.castShadow=true;}
+          });
+          
           lab.scene.add(gltf.scene);
 
           var testMixer = new THREE.AnimationMixer(gltf.scene);
