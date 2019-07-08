@@ -32,7 +32,7 @@ class Lab {
       //light2.position.set(-3,2,-1);
       //light AxesHelpe
       //const lightHelper = new THREE.DirectionalLightHelper(light,5);
-      const ambient = new THREE.AmbientLight( 0xffffff,6);
+      const ambient = new THREE.AmbientLight( 0xffffff,1);
       //this.scene.add( light );
       //this.scene.add(light2);
       //this.scene.add(lightHelper);
