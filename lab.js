@@ -44,7 +44,7 @@ class Lab {
 
       this.camera.position.set(0,3,5);
       const ogCamPosition = this.camera.position;
-      this.ogCamLookAt = new Vector3(0,0,0);
+      this.ogCamLookAt = new THREE.Vector3(0,0,0);
       //camera positions and rotations
       const moviePosition = new THREE.Vector3(0,3,0);
       const movieLook = new THREE.Vector3(-2.05,1.87,.43);
