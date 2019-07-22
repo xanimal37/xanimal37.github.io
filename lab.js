@@ -47,8 +47,6 @@ class Lab {
       this.ogCamLookAt = new THREE.Vector3(0,0,0);
       //camera positions and rotations
       const moviePosition = new THREE.Vector3(0,3,0);
-      const movieLook = new THREE.Vector3(-2.05,1.87,.43);
-      console.log(movieLook);
 
       //video test
       this.video = document.createElement('video');
@@ -94,7 +92,7 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        this.moveCamera(this.ogCamPosition,this.moviePosition, this.movieLook);
+        this.moveCamera(this.ogCamPosition,this.moviePosition, movieScreen.position);
         break;
       case true:
         this.isMoviePlaying=false;
