@@ -117,11 +117,15 @@ class Lab {
     console.log(intersects[0].object);
     //check for intersection with video screen
     if(intersects[0].object.name=="Screen"){
-      this.toggleMovie();}
+      this.toggleMovie();
+    }
+
     if(intersects[0]!=null){
-      this.controls.enabled=false;
-      console.log(this.controls.enabled);
-      this.camera.lookAt(intersects[0].object);
+      this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
+      let test = new THREE.Vector3();
+      intersects[0].object.getWorldPosition(test);
+
+      this.controls.target(test);
       console.log("move camera target "+ intersects[0].object.name);
     }
   }
