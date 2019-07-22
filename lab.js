@@ -119,6 +119,7 @@ class Lab {
     if(intersects[0].object.name=="Screen"){
       this.toggleMovie();
       this.camera.lookAt(intersects[0].object);
+      console.log("move camera target "+ intersects[0].object.name);
     }
   }
 
