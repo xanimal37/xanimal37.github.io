@@ -48,6 +48,7 @@ class Lab {
       //camera positions and rotations
       const moviePosition = new THREE.Vector3(0,3,0);
       const movieLook = new THREE.Vector3(-2.05,1.87,.43);
+      console.log(movieLook);
 
       //video test
       this.video = document.createElement('video');
