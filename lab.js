@@ -92,12 +92,12 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        this.moveCamera(this.movieScreen.position);
+        this.moveCamera(this.movieScreen);
         break;
       case true:
         this.isMoviePlaying=false;
         this.video.pause();
-      
+
         break;
       default:
         break;
