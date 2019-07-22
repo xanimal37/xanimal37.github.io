@@ -117,7 +117,8 @@ class Lab {
     console.log(intersects[0].object);
     //check for intersection with video screen
     if(intersects[0].object.name=="Screen"){
-      this.toggleMovie();
+      this.toggleMovie();}
+    if(intersects[0]!=null){
       this.camera.lookAt(intersects[0].object);
       console.log("move camera target "+ intersects[0].object.name);
     }
