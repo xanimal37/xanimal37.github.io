@@ -124,7 +124,7 @@ class Lab {
       this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
       let test = new THREE.Vector3();
       intersects[0].object.getWorldPosition(test);
-
+      this.camera.position.set(3,0,0);
       this.controls.target=test;
       console.log("move camera target "+ intersects[0].object.name);
     }
