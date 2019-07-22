@@ -68,10 +68,10 @@ class Lab {
 
       var movieMaterial = new THREE.MeshBasicMaterial({map:this.videoTexture});
       const movieGeometry = new THREE.PlaneGeometry(1,.56);
-      const movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
-      movieScreen.position.set(-2.05,1.87,.43);
-      movieScreen.rotateY(Math.PI/2);
-      movieScreen.rotateX(0.15);
+      this.movieScreen = new THREE.Mesh(movieGeometry,movieMaterial);
+      this.movieScreen.position.set(-2.05,1.87,.43);
+      this.movieScreen.rotateY(Math.PI/2);
+      this.movieScreen.rotateX(0.15);
       //animation mixers
       this.mixers=[];
 
@@ -92,7 +92,7 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        this.moveCamera(this.ogCamPosition,this.moviePosition, movieScreen.position);
+        this.moveCamera(this.ogCamPosition,this.moviePosition, this.movieScreen.position);
         break;
       case true:
         this.isMoviePlaying=false;
