@@ -92,21 +92,19 @@ class Lab {
       case false:
         this.isMoviePlaying =true;
         this.video.play();
-        this.moveCamera(this.ogCamPosition,this.moviePosition, this.movieScreen.position);
+        this.moveCamera(this.movieScreen.position);
         break;
       case true:
         this.isMoviePlaying=false;
         this.video.pause();
-        this.moveCamera(this.moviePosition,this.ogCamPosition, this.ogCamLookAt);
+      
         break;
       default:
         break;
     }
   }
 
-  moveCamera(loc1,loc2, look) {
-    console.log(loc1,loc2,look);
-    this.camera.position.set(loc2);
+  moveCamera(look) {
     this.camera.lookAt(look);
   }
 
