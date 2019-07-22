@@ -120,6 +120,7 @@ class Lab {
       this.toggleMovie();}
     if(intersects[0]!=null){
       this.controls.enabled=false;
+      console.log(this.controls.enabled);
       this.camera.lookAt(intersects[0].object);
       console.log("move camera target "+ intersects[0].object.name);
     }
