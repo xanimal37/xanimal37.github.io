@@ -76,7 +76,7 @@ class Lab {
       this.mixers=[];
 
       //use for click detection
-      this.lmovieScreen.name = "Screen";
+      this.movieScreen.name = "Screen";
       this.scene.add(this.movieScreen);
       this.isMoviePlaying =false; //initialize movie as not playing
 
