@@ -76,8 +76,8 @@ class Lab {
       this.mixers=[];
 
       //use for click detection
-      movieScreen.name = "Screen";
-      this.scene.add(movieScreen);
+      this.lmovieScreen.name = "Screen";
+      this.scene.add(this.movieScreen);
       this.isMoviePlaying =false; //initialize movie as not playing
 
       //window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
