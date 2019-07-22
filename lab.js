@@ -125,7 +125,7 @@ class Lab {
       let test = new THREE.Vector3();
       intersects[0].object.getWorldPosition(test);
 
-      this.controls.target(test);
+      this.controls.target=test;
       console.log("move camera target "+ intersects[0].object.name);
     }
   }
