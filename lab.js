@@ -106,6 +106,7 @@ class Lab {
   }
 
   moveCamera(loc1,loc2, look) {
+    console.log(loc1,loc2,look);
     this.camera.position.set(loc2);
     this.camera.lookAt(look);
   }
