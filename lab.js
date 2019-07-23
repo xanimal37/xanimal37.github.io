@@ -100,9 +100,15 @@ class Lab {
       switch(obj.name){
         case "Screen":
           this.camera.position.set(-1.6,1.80,.43);
+          this.toggleMovie();
           break;
         case "CTC_Poster":
           this.camera.position.set(-0.88,1.93,3.75);
+          break;
+        case: "Glovebox":
+        this.camera.position.set(-0.88,1.93,3.75);
+          break;
+        case: "ICDC_Poster":
           break;
         default:
           break;
@@ -121,12 +127,9 @@ class Lab {
     //for mouse interaction
     this.raycaster.setFromCamera(this.mouse,this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children,true);//recurseive(gets children)
-    console.log(intersects[0].object);
+
     //check for intersection with video screen
     if(intersects[0]!=null){
-        if(intersects[0].object.name=="Screen"){
-          this.toggleMovie();
-        }
         this.cameraTargetObject(intersects[0].object);
         console.log(intersects[0].object.name);
         console.log(this.camera.position);
