@@ -151,9 +151,10 @@ class Lab {
             this.videoTexture.needsUpdate = true;
           }
         }
-
-        this.mixer.update( delta );
-
+        //mixer isn't created until model loads
+        if(this.mixer){
+          this.mixer.update( delta );
+        }
         this.renderer.render( this.scene, this.camera );
 
     }
