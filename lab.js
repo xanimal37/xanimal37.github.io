@@ -30,13 +30,11 @@ class Lab {
       const ambient = new THREE.AmbientLight( 0xffffff,2);
       this.scene.add( ambient );
 
-      this.camera.position.set(0,3,5);
-      const ogCamPosition = this.camera.position;
+      this.camera.position.set(3,3,3);
+      this.ogCamPosition = this.camera.position;
       this.ogCamLookAt = new THREE.Vector3(0,0,0);
-      //camera positions and rotations
-      const moviePosition = new THREE.Vector3(0,3,0);
 
-      //video test
+      //video
       this.video = document.createElement('video');
       this.video.src = "video/ICDC.mp4";
       this.video.load;
@@ -90,6 +88,17 @@ class Lab {
     }
   }
 
+  //orient the camera via the orbital controls to look at a specific object while
+  //also possibly triggering an animation or movie
+  cameraTargetObject(obj) {
+      this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
+      let test = new THREE.Vector3();
+      obj.getWorldPosition(test); //world position of object is put into 'test'
+      this.camera.position.set(-1.6,1.80,.43);
+      this.controls.target=test;
+      console.log("move camera target "+ obj.name);
+  }
+
   onMouseMove(event) {
     //this.mouse.x = (event.clientX/window.innerWidth)*2-1;
     //this.mouse.y = (event.clientY/window.innerHeight)*2+1;
@@ -104,18 +113,14 @@ class Lab {
     var intersects = this.raycaster.intersectObjects(this.scene.children,true);//recurseive(gets children)
     console.log(intersects[0].object);
     //check for intersection with video screen
-    if(intersects[0].object.name=="Screen"){
-      this.toggleMovie();
-    }
-
     if(intersects[0]!=null){
-      this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
-      let test = new THREE.Vector3();
-      intersects[0].object.getWorldPosition(test);
-      this.camera.position.set(-1.6,1.80,.43);
-      this.controls.target=test;
-      console.log("move camera target "+ intersects[0].object.name);
-    }
+        if(intersects[0].object.name=="Screen"){
+          this.toggleMovie();
+        }
+        this.cameraTargetObject(intersects[0]);
+      }
+
+
   }
 
 	animate() {
