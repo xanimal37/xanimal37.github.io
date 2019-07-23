@@ -27,19 +27,7 @@ class Lab {
       this.controls = new THREE.OrbitControls(this.camera,this.renderer.domElement);
       document.body.appendChild( this.renderer.domElement );
 
-      const spotlight = new THREE.SpotLight( 0xffffff,1 );
-      //spotlight.position.set( 2, 2, 2 );
-      spotlight.castShadow=true;
-      spotlight.shadow.mapSize.height = 1024;
-      spotlight.shadow.mapSize.width=1024;
-      //const light2 = new THREE.DirectionalLight(0xffffff,1);
-      //light2.position.set(-3,2,-1);
-      //light AxesHelpe
-      const lightHelper = new THREE.DirectionalLightHelper(spotlight,3);
       const ambient = new THREE.AmbientLight( 0xffffff,2);
-      this.scene.add( spotlight );
-      //this.scene.add(light2);
-      this.scene.add(lightHelper);
       this.scene.add( ambient );
 
       this.camera.position.set(0,3,5);
