@@ -60,8 +60,6 @@ class Lab {
       this.movieScreen.position.set(-2.05,1.87,.43);
       this.movieScreen.rotateY(Math.PI/2);
       this.movieScreen.rotateX(0.15);
-      //animation mixers
-      this.mixers=[];
 
       //use for click detection
       this.movieScreen.name = "Screen";
@@ -163,7 +161,6 @@ class Lab {
 
   loadModels(){
     const lab = this;
-    lab.mixers =[];
     var assetsToLoad=[
       "assets/test3.glb"
       //"assets/room.glb",
@@ -187,14 +184,14 @@ class Lab {
 
           lab.scene.add(gltf.scene);
 
-          var testMixer = new THREE.AnimationMixer(gltf.scene);
+          lab.mixer = new THREE.AnimationMixer(gltf.scene);
+          lab.clips = gltf.scene.animations;
+          console.log(lab.clips);
         //  testMixer.clipAction(gltf.animations[0]).play();
         //  testMixer.clipAction(gltf.animations[1]).play();
           //testMixer.clipAction(gltf.animations[2]).play();
           //testMixer.clipAction(gltf.animations[3]).play();
         //  testMixer.clipAction(gltf.animations[4]).play();
-
-          lab.mixers.push(testMixer);
           console.log("There are " + gltf.animations.length + " animations in the scene.");
           for(var i=0;i<gltf.animations.length;i++) {
             console.log(gltf.animations[i].name);
