@@ -29,6 +29,8 @@ class Lab {
 
       const ambient = new THREE.AmbientLight( 0xffffff,2);
       this.scene.add( ambient );
+      const dlight = new THREE.DirectionalLight(0xffffff);
+      this.scene.add(dlight);
 
       this.camera.position.set(3,3,3);
       this.ogCamPosition = this.camera.position;
