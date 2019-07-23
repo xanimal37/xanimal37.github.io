@@ -108,7 +108,7 @@ class Lab {
           this.camera.position.set(-0.88,1.93,3.75);
           break;
         case: "Glovebox":
-        this.camera.position.set(-0.88,1.93,3.75);
+          this.camera.position.set(-0.88,1.93,3.75);
           break;
         case: "ICDC_Poster":
           break;
