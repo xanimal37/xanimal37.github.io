@@ -101,6 +101,9 @@ class Lab {
         case "Screen":
           this.camera.position.set(-1.6,1.80,.43);
           break;
+        case "CTC_Poster":
+          this.camera.position.set(-0.88,1.93,3.75);
+          break;
         default:
           break;
     }
