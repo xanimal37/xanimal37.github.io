@@ -109,7 +109,7 @@ class Lab {
           break;
         case "GloveBox_0":
           this.camera.position.set(-0.51,1.93,5.47);
-          this.mixers[0].play();
+          this.mixers[0].clipAction(gltf.animations[0]).play();
           break;
         case "ICDC_Poster":
           this.camera.position.set(5.8,1.92,-1.77);
