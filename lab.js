@@ -108,9 +108,11 @@ class Lab {
           this.camera.position.set(-0.88,1.93,3.75);
           break;
         case "Glovebox":
-          this.camera.position.set(-0.88,1.93,3.75);
+          this.camera.position.set(-0.51,1.93,5.47);
+          this.mixers[0].play();
           break;
         case "ICDC_Poster":
+          this.camera.position.set(5.8,1.92,-1.77);
           break;
         default:
           break;
@@ -186,11 +188,11 @@ class Lab {
           lab.scene.add(gltf.scene);
 
           var testMixer = new THREE.AnimationMixer(gltf.scene);
-          testMixer.clipAction(gltf.animations[0]).play();
-          testMixer.clipAction(gltf.animations[1]).play();
-          testMixer.clipAction(gltf.animations[2]).play();
-          testMixer.clipAction(gltf.animations[3]).play();
-          testMixer.clipAction(gltf.animations[4]).play();
+        //  testMixer.clipAction(gltf.animations[0]).play();
+        //  testMixer.clipAction(gltf.animations[1]).play();
+          //testMixer.clipAction(gltf.animations[2]).play();
+          //testMixer.clipAction(gltf.animations[3]).play();
+        //  testMixer.clipAction(gltf.animations[4]).play();
 
           lab.mixers.push(testMixer);
           console.log("There are " + gltf.animations.length + " animations in the scene.");
