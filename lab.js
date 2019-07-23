@@ -107,10 +107,10 @@ class Lab {
         case "CTC_Poster":
           this.camera.position.set(-0.88,1.93,3.75);
           break;
-        case: "Glovebox":
+        case "Glovebox":
           this.camera.position.set(-0.88,1.93,3.75);
           break;
-        case: "ICDC_Poster":
+        case "ICDC_Poster":
           break;
         default:
           break;
