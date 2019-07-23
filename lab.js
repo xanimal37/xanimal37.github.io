@@ -107,7 +107,7 @@ class Lab {
         case "CTC_Poster":
           this.camera.position.set(-0.88,1.93,3.75);
           break;
-        case "Glovebox":
+        case "Glovebox_0":
           this.camera.position.set(-0.51,1.93,5.47);
           this.mixers[0].play();
           break;
