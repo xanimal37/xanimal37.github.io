@@ -117,7 +117,7 @@ class Lab {
         if(intersects[0].object.name=="Screen"){
           this.toggleMovie();
         }
-        this.cameraTargetObject(intersects[0]);
+        this.cameraTargetObject(intersects[0].object);
       }
 
 
