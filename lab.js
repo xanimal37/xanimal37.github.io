@@ -94,9 +94,16 @@ class Lab {
       this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
       let test = new THREE.Vector3();
       obj.getWorldPosition(test); //world position of object is put into 'test'
-      this.camera.position.set(-1.6,1.80,.43);
       this.controls.target=test;
       console.log("move camera target "+ obj.name);
+      //place the camera differntly depending on the intersectObjects
+      switch(obj.name){
+        case "Screen":
+          this.camera.position.set(-1.6,1.80,.43);
+          break;
+        default:
+          break;
+    }
   }
 
   onMouseMove(event) {
