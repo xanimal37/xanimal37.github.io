@@ -107,7 +107,7 @@ class Lab {
           break;
         case "GloveBox_0":
           this.camera.position.set(-0.51,1.93,5.47);
-          console.log(this.mixers[0]);
+            console.log(this.clips);
           break;
         case "ICDC_Poster":
           this.camera.position.set(5.8,1.92,-1.77);
@@ -185,8 +185,8 @@ class Lab {
           lab.scene.add(gltf.scene);
 
           lab.mixer = new THREE.AnimationMixer(gltf.scene);
-          lab.clips = gltf.scene.animations;
-          console.log(lab.clips);
+          lab.clips = gltf.animations;
+
         //  testMixer.clipAction(gltf.animations[0]).play();
         //  testMixer.clipAction(gltf.animations[1]).play();
           //testMixer.clipAction(gltf.animations[2]).play();
