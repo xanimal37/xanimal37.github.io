@@ -107,7 +107,9 @@ class Lab {
           break;
         case "GloveBox_0":
           this.camera.position.set(-0.51,1.93,5.47);
-            console.log(this.clips);
+          var clip = THREE.AnimationClip.findByName( this.clips, 'Cr_AtomAction' );
+          var action = this.mixer.clipAction( clip );
+          action.play();
           break;
         case "ICDC_Poster":
           this.camera.position.set(5.8,1.92,-1.77);
