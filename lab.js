@@ -110,6 +110,7 @@ class Lab {
           var clip = THREE.AnimationClip.findByName( this.clips, 'Cr_AtomAction' );
           var action = this.mixer.clipAction( clip );
           action.play();
+          console.log("turning on " + action);
           break;
         case "ICDC_Poster":
           this.camera.position.set(5.8,1.92,-1.77);
