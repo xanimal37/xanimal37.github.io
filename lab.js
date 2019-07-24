@@ -66,6 +66,9 @@ class Lab {
       this.scene.add(this.movieScreen);
       this.isMoviePlaying =false; //initialize movie as not playing
 
+      //animation flags
+      this.isDrawerOpen = false;
+
       //window.addEventListener('mousemove',function(){lab.onMouseMove(event);},false);
       window.addEventListener('mousedown',function(){lab.onMouseDown(event);},false);
 
@@ -91,6 +94,8 @@ class Lab {
   //orient the camera via the orbital controls to look at a specific object while
   //also possibly triggering an animation or movie
   cameraTargetObject(obj) {
+      var clip;
+      var action;
       this.scene.updateMatrixWorld(); //need or will get coordinates for the whole model
       let test = new THREE.Vector3();
       obj.getWorldPosition(test); //world position of object is put into 'test'
@@ -107,14 +112,29 @@ class Lab {
           break;
         case "GloveBox_0":
           this.camera.position.set(-0.51,1.93,5.47);
-          var clip = THREE.AnimationClip.findByName( this.clips, 'Cr_AtomAction' );
-          var action = this.mixer.clipAction( clip );
+          clip = THREE.AnimationClip.findByName( this.clips, 'Cr_AtomAction' );
+          action = this.mixer.clipAction( clip );
           action.play();
-          console.log("turning on " + action);
+          console.log("turning on " + action.name);
           break;
         case "ICDC_Poster":
           this.camera.position.set(5.8,1.92,-1.77);
           break;
+        case "WS_Drawer_01":
+        if(this.isDrawerOpen == false){
+          clip = THREE.AnimationClip.findByName( this.clips, 'WS_Drawer_Open' );
+          action = this.mixer.clipAction( clip );
+          action.play();
+          console.log("turning on " + action.name);
+          this.isDrawerOpen=true;
+        }
+        else {
+          clip = THREE.AnimationClip.findByName( this.clips, 'WS_Drawer_Close' );
+          action = this.mixer.clipAction( clip );
+          action.play();
+          console.log("turning on " + action.name);
+          this.isDrawerOpen=false;
+        }
         default:
           break;
     }
