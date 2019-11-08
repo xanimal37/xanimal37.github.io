@@ -9,12 +9,23 @@ html {
 }
 
 body {
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+section {
+  background-color:#ffffff;
+}
+
+.fWidth {
+  margin-left:0;
+  margin-right:0;
+}
+
+.resWidth {
   margin-left:15%;
   margin-right:15%;
-  margin-top:0;
-  margin-bottom:0;
-
-  background-color:#ffffff;
 }
 
 p {
