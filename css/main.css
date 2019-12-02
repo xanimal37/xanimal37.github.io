@@ -8,7 +8,7 @@ a {
 	color:#ffcc00;
 }
 
-p a {
+main a {
 	color:#b38f00;
 }
 
@@ -114,5 +114,8 @@ footer {
 .disclaimer {
 	color:#ffffff;
 	text-align: center;
-	font-size:.9em;
+	font-size:.8em;
+	max-width:90%;
+	margin:0 auto;
+	padding:.6em;
 }
