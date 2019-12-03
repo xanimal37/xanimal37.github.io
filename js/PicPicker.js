@@ -11,8 +11,6 @@ window.onload = function picLoad() {
     for(var i=0;i<items.length;i++){
       items[i].addEventListener("click",ShowImage);
     }
-
-    document.getElementById("closeModalButton").addEventListener("click",HideImage);
 }
 
 function ShowImage(event) {
