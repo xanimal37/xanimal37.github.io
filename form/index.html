@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>ICDC, NMGC &amp; MRSEC Graphics- Work Request</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Sarala&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+
+<header>
+	<h4>ICDC, NMGC &amp; UMN MRSEC</h4>
+	<h1>Scientific Graphics</h1>
+		<nav class="shortRow">
+			<ul>
+				<li><a href="../index.html">home</a></li>
+				<li><a href="../portfolio/index.html">portfolio</a></li>
+				<li><a href="../library/index.html">library</a></li>
+				<li><a href="index.html">request work</a></li>
+			</ul>
+		</nav>
+</header>
+
+<body>
+	<main class="shortRow">
+		<h1>work request</h1>
+		<form class="" action="index.html" method="post">
+			<div class="formSection">
+				<label class="mlabel">your name: </label>
+				<input type="text" name="" value="">
+			</div>
+			<div class="formSection">
+				<label class="mlabel">primary investigator: </label>
+						<input type="text" name="" value="">
+			</div>
+			<div class="formSection">
+				<label class="mlabel">center: </label>
+				<input type="radio" id="nmgc" name="center" value="nmgc">
+  			<label for="nmgc">NMGC</label>
+				<input type="radio" id="icdc" name="center" value="icdc">
+  			<label for="icdc">ICDC</label>
+				<input type="radio" id="mrsec" name="center" value="mrsec">
+				<label for="mrsec">MRSEC</label>
+			</div>
+			<div class="formSection">
+				<label class="mlabel">type of work: </label>
+				<input type="radio" id="cover" name="workType" value="cover">
+				<label for="cover">cover</label>
+				<input type="radio" id="toc" name="workType" value="toc">
+				<label for="toc">TOC</label>
+				<input type="radio" id="figure" name="workType" value="figure">
+				<label for="figure">figure(s)</label>
+				<input type="radio" id="poster" name="workType" value="poster">
+				<label for="poster">poster</label>
+				<input type="radio" id="animation" name="workType" value="animation">
+				<label for="animation">animation</label>
+				<input type="radio" id="other" name="workType" value="other">
+				<label for="other">other</label>
+			</div>
+			<div class="formSection">
+				<textarea id="desc" name="desc" rows="5" cols="92">please describe in more detail what you are looking for in this work...
+				</textarea>
+			</div>
+			<div class="formSection">
+				<label for="start">I need the final version of this work by:</label>
+					<input type="date" id="due" name="due-date"
+       			value="2020-01-01"
+       			min="2020-01-01" max="2020-12-31">
+			</div>
+			<div class="formSection">
+				<input type="submit" value="Send Request">
+			</div>
+		</form>
+	</main>
+	<footer class="longRow">
+			<p class="disclaimer">The graphics contained on this web site are for the sole use of members of the <a href="http://www1.chem.umn.edu/icdc/" target="_blank">Inorganometallic Catalyst Design Center (<abbr>ICDC</abbr>)</a>, <a href="http://www1.chem.umn.edu/nmgc/" target="_blank">Nanoporous Materials Genome Center (<abbr>NMGC</abbr>)</a> and the <a href="http://www.mrsec.umn.edu/" target="_blank">University of Minnesota Materials Research Science &amp; Engineering Center (<abbr>UMN MRSEC</abbr>)</a>. All work must be entirely or partially funded by the respective center.</p>
+			<p class="disclaimer">All images are &copy; their respective centers and the University of Minnesota.</p>
+		</footer>
+		<div id="modalWindow">
+		</div>
+</body>
+</html>
