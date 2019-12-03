@@ -16,13 +16,11 @@ window.onload = function picLoad() {
 }
 
 function ShowImage(event) {
-  modal.classList.add("showIt");
   modal.classList.remove("hideIt");
   selectedImage.src=event.target.src;
 }
 
 function HideImage() {
-  console.log("Hid image");
   modal.classList.remove("showIt");
   modal.classList.add("hideIt");
 }
