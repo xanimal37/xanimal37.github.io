@@ -17,6 +17,7 @@ window.onload = function picLoad() {
 
 function ShowImage(event) {
   modal.classList.remove("hideIt");
+  modal.classList.add("showIt");
   selectedImage.src=event.target.src;
 }
 
