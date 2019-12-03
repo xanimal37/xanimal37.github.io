@@ -1,9 +1,18 @@
 var items;
+var modal;
 
 window.onload = function picLoad() {
-    console.log("Hello world");
+
+    modal=document.getElementById("modalWindow");
+
     items = document.getElementsByClassName("thumb");
     for(var i=0;i<items.length;i++){
-      console.log(items[i].alt);
-    }
+      items[i].addEventListener("click",ShowImage);
+    }  
+}
+
+function ShowImage() {
+  console.log("Showed image");
+  modal.classList.add("showIt");
+  modal.classList.remove("hideIt");
 }

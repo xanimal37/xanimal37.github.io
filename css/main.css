@@ -115,8 +115,9 @@ p {
 }
 
 #modalWindow {
-	display:none;
+	background-color:purple;
 }
+
 /* end image galleries */
 
 footer {
@@ -139,4 +140,12 @@ footer {
 
 .mlabel {
 	font-weight: bold;
+}
+
+.hideIt {
+	display:none;
+}
+
+.showIt {
+	display:block;
 }
