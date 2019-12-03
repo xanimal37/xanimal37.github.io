@@ -1,9 +1,11 @@
 var items;
 var modal;
+var imageToShow;
 
 window.onload = function picLoad() {
 
     modal=document.getElementById("modalWindow");
+    imageToShow=document.getElementById("selectedImage");
 
     items = document.getElementsByClassName("thumb");
     for(var i=0;i<items.length;i++){
@@ -17,6 +19,7 @@ function ShowImage() {
   console.log("Showed image");
   modal.classList.add("showIt");
   modal.classList.remove("hideIt");
+  selectedImage.src="img/NMGC_cover_00.jpg";
 }
 
 function HideImage() {
