@@ -114,14 +114,6 @@ p {
 		}
 }
 
-#modalWindow {
-	background-color:#202020;
-	padding:1em;
-	display:flex;
-	flex-direction:column;
-	flex-wrap:nowrap;
-}
-
 /* end image galleries */
 
 footer {
