@@ -15,11 +15,10 @@ window.onload = function picLoad() {
     document.getElementById("closeModalButton").addEventListener("click",HideImage);
 }
 
-function ShowImage() {
-  console.log("Showed image");
+function ShowImage(event) {
   modal.classList.add("showIt");
   modal.classList.remove("hideIt");
-  selectedImage.src="img/NMGC_cover_00.jpg";
+  selectedImage.src=event.target.src;
 }
 
 function HideImage() {
