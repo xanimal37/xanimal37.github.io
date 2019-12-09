@@ -25,14 +25,18 @@
 <body>
 	<main class="shortRow">
 		<h1>work request</h1>
-		<form class="" action="index.html" method="post">
+		<form action="mailto:zeeb0002@umn.edu" method="post" enctype="text/plain">
 			<div class="formSection">
 				<label class="mlabel">your name: </label>
-				<input type="text" name="" value="">
+				<input type="text" name="Your Name" value="">
+			</div>
+			<div class="formSection">
+				<label class="mlabel">your email: </label>
+				<input type="email" id="email" name="Your Email" value="">
 			</div>
 			<div class="formSection">
 				<label class="mlabel">primary investigator: </label>
-						<input type="text" name="" value="">
+						<input type="text" name="PI" value="">
 			</div>
 			<div class="formSection">
 				<label class="mlabel">center: </label>
@@ -63,10 +67,28 @@
 				</textarea>
 			</div>
 			<div class="formSection">
-				<label for="start">I need the final version of this work by:</label>
+				<label class="mlabel">I expect</label> 
+				<input type="radio" id="1rev" name="revisions" value="1">
+				<label for="1rev">1</label>
+				<input type="radio" id="2rev" name="revisions" value="2">
+				<label for="2rev">2</label>
+				<input type="radio" id="3rev" name="revisions" value="3">
+				<label for="3rev">3</label>
+				<input type="radio" id="3plusrev" name="revisions" value="3plus">
+				<label for="3plusrev">3+</label>
+				<label class="mlabel"> revisions.</label>
+			</div>
+			<div class="formSection">
+				<label class="mlabel" for="due">I need the final version of this work by:</label>
 					<input type="date" id="due" name="due-date"
        			value="2020-01-01"
        			min="2020-01-01" max="2020-12-31">
+			</div>
+			<div class="formSection">
+			<label>If you wish, please attach any files that may be helpful. Suggestions are covers that you like, images that show a style you prefer or want for your image, something that shows a color palette you like, or anything else that would help to give an idea of what you envision for your artwork. (file must be an image or .pdf)</label><br>
+			<input type="file" id="file1" accept="image/*,.pdf">
+				<input type="file" id="file2" accept="image/*,.pdf">
+				<input type="file" id="file3" accept="image/*,.pdf">
 			</div>
 			<div class="formSection">
 				<input type="submit" value="Send Request">
