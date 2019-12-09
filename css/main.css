@@ -49,7 +49,7 @@ header h1 {
 }
 
 nav {
-	background-color:#666666;
+	background-color:#303030;
 	padding-top:.4em;
 	padding-bottom:.4em;
 }
@@ -65,7 +65,7 @@ nav ul {
 nav ul li {
 	font-family: 'Sarala';
 	font-weight: bolder;
-	font-size:1.2em;
+	font-size:1.4em;
 }
 
 p {
