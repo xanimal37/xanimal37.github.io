@@ -28,6 +28,10 @@ h1,h4 {
 	font-family:'Russo One';
 }
 
+header {
+	margin-bottom:.3em;	
+}
+
 header h1,h4 {
 	text-align: center;
 }
@@ -49,7 +53,6 @@ nav {
 	background-color:#202020;
 	padding-top:.2em;
 	padding-bottom:.2em;
-	margin-bottom:.2em;
 }
 
 nav ul {
