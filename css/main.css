@@ -47,8 +47,9 @@ header h1 {
 
 nav {
 	background-color:#202020;
-	padding-top:.4em;
-	padding-bottom:.4em;
+	padding-top:.2em;
+	padding-bottom:.2em;
+	margin-bottom:.2em;
 }
 
 nav ul {
