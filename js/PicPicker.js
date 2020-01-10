@@ -4,8 +4,6 @@ var imageToShow;
 
 window.onload = function picLoad() {
 
-  console.log("js ok");
-
     modal=document.getElementById("modalWindow");
     imageToShow=document.getElementById("selectedImage");
 
