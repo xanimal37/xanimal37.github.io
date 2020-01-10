@@ -121,7 +121,6 @@ footer {
 }
 
 .itemText {
-	padding:.1em;
 	background-color: #202020;
 	z-index: 10;
 	position: absolute;
@@ -129,7 +128,7 @@ footer {
 }
 
 .itemText p {
-	width:100%;	text-align: center;
+	color:#ffffff;
 }
 
 .longRow {
