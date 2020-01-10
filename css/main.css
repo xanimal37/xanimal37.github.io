@@ -102,7 +102,6 @@ footer {
 	display:flex;
 	flex-direction:column;
 	flex-wrap: nowrap;
-	border:2px solid purple;
 }
 
 .item:hover .itemImg img {
@@ -116,20 +115,20 @@ footer {
 .itemImg img {
 	width: 160px;
 	height:160px;
-	border:6px solid #000000;
+	border:6px solid #202020;
 	border-radius: 50%;
     object-fit: cover;
 }
 
 .itemText {
 	padding:.2em;
-	background-color: black;
+	background-color: #202020;
 	position: absolute;
 	top:50%;
 }
 
 .itemText p {
-	text-align: center;
+	width:100%;	text-align: center;
 }
 
 .longRow {
