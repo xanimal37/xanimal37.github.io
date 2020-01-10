@@ -29,7 +29,7 @@ h1,h4 {
 }
 
 header {
-	margin-bottom:.3em;	
+	margin-bottom:.3em;
 }
 
 header h1,h4 {
@@ -83,7 +83,6 @@ footer {
 
 /**** ID STYLES ****/
 #gallery {
-	background-image:url('../img/back-01.svg');
 	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: row;
