@@ -102,6 +102,7 @@ footer {
 	display:flex;
 	flex-direction:column;
 	flex-wrap: nowrap;
+	border:2px solid purple;
 }
 
 .item:hover .itemImg img {
@@ -121,6 +122,8 @@ footer {
 }
 
 .itemText {
+	padding:.2em;
+	background-color: black;
 	position: absolute;
 	top:50%;
 }
