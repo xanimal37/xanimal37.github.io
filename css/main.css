@@ -101,6 +101,7 @@ footer {
 }
 
 #closeModalButton {
+	margin-top:.6em;
 	padding:.6em;
 	background-color:#202020;
 	border:1px solid #404040;
