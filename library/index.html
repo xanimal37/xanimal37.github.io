@@ -18,7 +18,7 @@
 			<ul>
 				<li><a href="../index.html">home</a></li>
 				<li><a href="../form/index.html">request work</a></li>
-				<li><a href="../form/index.html">about me</a></li>
+				<li><a href="../about/index.html">about me</a></li>
 			</ul>
 		</nav>
 </header>
@@ -31,20 +31,22 @@
 					<div class="imgFrame">
 						<img class="thumb" src="img/Library_01.jpg">
 					</div>
-				<p>GAGLIARDI</p>
 			</div>
 				<div class="item">
 					<div class="imgFrame">
-						<img class="thumb" src="img/placeholder.jpg">
+						<img class="video" src="img/placeholder.jpg">
 					</div>
-				<p>ICDC</p>
 			</div>
 		</main>
 	<footer class="longRow">
 		<p class="disclaimer">The graphics contained on this web site are for the sole use of members of the <a href="http://www1.chem.umn.edu/icdc/" target="_blank">Inorganometallic Catalyst Design Center (<abbr>ICDC</abbr>)</a>, <a href="http://www1.chem.umn.edu/nmgc/" target="_blank">Nanoporous Materials Genome Center (<abbr>NMGC</abbr>)</a> and the <a href="http://www.mrsec.umn.edu/" target="_blank">University of Minnesota Materials Research Science &amp; Engineering Center (<abbr>UMN MRSEC</abbr>)</a>. All work must be entirely or partially funded by the respective center.</p>
 		<p class="disclaimer">All images are &copy; their respective centers and the University of Minnesota.</p>
 	</footer>
-	<div id="modalWindow">
-	</div>
 </body>
+<div id="modalWindow" class="hideIt">
+	<div id="imgWindow">
+	<img id="selectedImage" src="">
+</div>
+	<button onclick="HideImage()" id="closeModalButton">close window</button>
+</div>
 </html>
