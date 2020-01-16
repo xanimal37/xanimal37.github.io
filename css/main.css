@@ -99,6 +99,13 @@ footer {
 #selectedImage {
 	max-width:600px;
 }
+
+#closeModalButton {
+	background-color:#202020;
+	border:1px solid #404040;
+	color:#ffcc00;
+	font-family: 'Russo One', sans-serif;
+}
 /**** END ID STYLES ****/
 
 /**** GALLERY ****/
