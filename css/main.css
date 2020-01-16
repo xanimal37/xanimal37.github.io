@@ -181,6 +181,10 @@ footer {
 		align-items: center;
 }
 
+#imgWindow {
+	max-width:800px;
+}
+
 .showIt {
 	display:flex;
 	flex-direction: column;
