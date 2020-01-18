@@ -199,4 +199,10 @@ footer {
 	flex-direction: column;
 	position:fixed;
 }
+
+@media (max-width:576px) {
+	.linkImg {
+		display:none;
+	}
+}
 /**** END CLASS STYLES ****/
