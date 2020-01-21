@@ -160,6 +160,7 @@ footer {
 }
 
 .disclaimer {
+	font-family: monospace;
 	color:#ffffff;
 	text-align: center;
 	font-size:.8em;
