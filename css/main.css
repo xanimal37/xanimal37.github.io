@@ -1,10 +1,31 @@
-#ArtMenu {
-	list-style-type: none;
+#Layout {
+	display:grid;
+	grid-template-columns: 200px 1fr 1fr 1fr 200px;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: 
+		". header header header ."
+		". sideMenu content content ."
+		". footer footer footer ."
+	;
 }
 
-#Artmenu li {
-	font-family: 'Rakkas',cursive;
-	font-size:2rem;
-	background-color:#303030;
-	border-radius: 3px;
+header {
+	grid-area: header;
+	border:4px solid yellow;
 }
+
+main {
+	grid-area:content;
+	border:4px solid orange;
+}
+
+footer {
+	grid-area: footer;
+	border:3px solid blue;
+}
+
+#ArtMenu {
+	grid-area:sideMenu;
+	border:4px solid brown;
+}
+
