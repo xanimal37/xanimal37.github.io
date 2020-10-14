@@ -12,6 +12,23 @@
 header {
 	grid-area: header;
 	border:4px solid yellow;
+
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+nav {
+	background-color:pink;
+}
+
+nav ul {
+	list-style-type: none;
+
+	display:flex;
+	flex-direction: row;
+
 }
 
 main {
@@ -27,5 +44,15 @@ footer {
 #ArtMenu {
 	grid-area:sideMenu;
 	border:4px solid brown;
+}
+
+#ArtMenu ul {
+	list-style-type: none;
+}
+
+#ArtMenu ul li {
+	padding:1em;
+	background-color:forestgreen;
+	margin:.6em;
 }
 
