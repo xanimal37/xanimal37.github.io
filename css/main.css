@@ -121,8 +121,6 @@ a:hover {
 	padding:1.2rem;
 	margin:0 0 2rem 0;
 	box-sizing: border-box;
-	border:8px ridge #ffffff;
-	border-radius:6px;
 	display:flex;
 	flex-direction: row;
 }
@@ -144,6 +142,8 @@ main {
 }
 
 .slideImgContainer img {
+	border:8px ridge #ffffff;
+	border-radius:6px;
 	display:block;
 	width:100%;
 	object-fit: cover;
