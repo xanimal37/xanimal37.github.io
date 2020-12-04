@@ -210,6 +210,10 @@ footer p {
 		padding:1em;
 	}
 
+	main ul {
+		list-style-position: inside;
+	}
+	
 	h1 {
 		font-size: 2em;
 	}
