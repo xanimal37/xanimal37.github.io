@@ -68,6 +68,7 @@ nav {
 	list-style-type: none;
 
 	display:flex;
+	flex-wrap: none;
 	flex-direction: row;
 	justify-content: space-between;
 }
@@ -106,11 +107,17 @@ h2 {
 	flex:33%;
 	max-width:33%;
 	padding:.2em;
+
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
 
 .imgColumn img {
-	border:2px solid #dddddd;
+	
+	max-width: 100%;
 	margin:.4em .2em .4em .2em;
+	box-shadow: 2px 2px 5px #dddddd;
 }
 
 footer {
@@ -120,7 +127,7 @@ footer {
 }
 
 footer p {
-	border:3px solid #468686;
+	border:3px solid #90d5d5;
 	padding:.6em;
 }
 
@@ -153,7 +160,7 @@ footer p {
 	}
 
 	#ArtMenu ul li {
-		font-size:1rem;
+		font-size:1.2rem;
 	}
 
 	main {
@@ -183,8 +190,7 @@ footer p {
 	}
 
 	.imgColumn img {
-		border:2px solid #eeeeee;
-		margin:.4em;
+		margin:0 0 .8em 0;
 	}
 
 	footer {
@@ -193,5 +199,38 @@ footer p {
 
 	footer p {
 		font-size:.8rem;
+	}
+}
+
+@media (min-width:541px) and (max-width:768px) {
+	body {
+		background-image: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)), url('../img/background.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		}
+
+	#Grid {
+		width:100%;
+		margin:0;
+		display:grid;
+		grid-template-columns: 24px 1fr 1fr 1fr 24px;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: 
+		". header header header ."
+		". nav nav nav ."
+		". content content content ."
+		". footer footer footer ."
+		;
+	}
+
+	#ArtMenu ul li {
+	
+		font-size:1.2rem;
+	}
+
+	.imgColumn {
+		flex:50%;
+		max-width:50%;
 	}
 }
