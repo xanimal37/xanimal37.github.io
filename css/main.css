@@ -1,179 +1,124 @@
-html {
-	height:100%;
-	width:100%;
+/*PAGE*/
+* {
 	margin:0;
 	padding:0;
+	box-sizing: border-box;
+}
+
+html {
 	line-height: 1.6;
-	font-family: 'Press Start 2P',sans-serif;
-	color:#ffffff;
+	font-family: sans-serif;
+	color:#202020;
 }
 
 body {
-	background-color:#181818;
-	height:100%;
-	width:100%;
-	margin:0;
-	padding:0
-}
-
-#Layout {
-	width:100%;
-	margin:0;
-	display:grid;
-	grid-template-columns: 140px 1fr 1fr 1fr 140px;
-	grid-template-rows: 240px auto 1fr;
-	grid-template-areas: 
-		". header header header ."
-		". sideMenu content content ."
-		". footer content content ."
-	;
-
-	border:1px solid blue;
-
-}
+	height:100vh;
+	background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.75) 15% 85%,rgba(255,255,255,0)),url('../img/background.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	}
 
 a {
 	text-decoration: none;
-	color:#FFD700;
+	color:#008080;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	display:block;
+	max-width:100%;
+}
+
+/*GRID LAYOUT*/
+
+#Grid {
+
+	
+	max-width: 1920px;
+	margin:0 auto;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 260px 80px auto auto;
+	grid-template-areas: 
+		". header header header ."
+		". nav nav nav ."
+		". content content content ."
+		". footer footer footer ."
+	;
+	
+
 }
 
 header {
 	grid-area: header;
-	background-color: #181818;
-	border-left:8px ridge #ffffff;
-	border-right:8px ridge #ffffff;
-	border-bottom:8px ridge #ffffff;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	padding:4rem;
 
 	display:flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-h1,h4 {
-	margin: 0;
-	padding:0;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding:2em;
+	text-align: center;
 }
 
 nav {
-	display:flex;
-	flex-direction: row;
-}
-
-nav ul {
-	margin:0;
-	padding:0;
-	list-style-type: none;
-
-	display:flex;
-	flex-direction: row;
-	align-items: flex-end;
-}
-
-nav ul li {
-	margin-left:2rem;
-}
-
-#ArtMenu {
-	grid-area:sideMenu;
-	display:flex;
-	flex-direction: column;
+	grid-area:nav;
 }
 
 #ArtMenu ul {
 	list-style-type: none;
-	padding:4rem 4rem 4rem 0;
-	margin:0;
 
-	display:flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-}
-
-#ArtMenu ul li {
-	padding:1em;
-	margin-top:0;
-	margin-bottom:1.6rem;
-	font-family: 'Press Start 2P',sans-serif;
-	font-size:1.2rem;
-}
-
-#ArtMenu a:after {
-	content:'';
-}
-
-a:hover {
-	animation-name: glow;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
-#ArtMenu a:hover::after{
-	content:' >>';
-}
-
-.slide {
-	padding:1.2rem;
-	margin:0 0 2rem 0;
-	box-sizing: border-box;
 	display:flex;
 	flex-direction: row;
-}
-
-main {
-	box-sizing: border-box;
-	margin:4rem 0 4rem 0;
-	padding:0;
-	grid-area:content;
-
-	display:flex;
-	flex-direction:column;
-	flex-wrap: nowrap;
 	justify-content: space-between;
 }
 
-.slideImgContainer {
-	width:50%;
+#ArtMenu ul li {
+	font-family:'Syne',sans-serif;
+	font-size:2rem;
 }
 
-.slideImgContainer img {
-	border:8px ridge #ffffff;
-	border-radius:6px;
-	display:block;
-	width:100%;
-	object-fit: cover;
-}
+main {
+	grid-area:content;
+	padding:3em;
+	line-height: 1.8;
 
-.slideTextContainer {
-	width:50%;
 	display:flex;
-	flex-direction:column;
-	flex-wrap: nowrap;
-	justify-content: center;
-}
-.slideTextContainer p {
-	margin-left:2rem;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 footer {
 	grid-area: footer;
-	margin:0 4rem 4rem 0;
-	padding:0 0 0 1rem;
-	line-height: 2;
-	font-size:12px;
-	
-
-	display: flex;
-	flex-direction: column;
+	padding:1em;
+	margin-bottom:2em;
+	border:3px solid #008080;
 }
 
-@keyframes glow {
-	0%   {opacity: 1;}
-	50%  {opacity:0;}
-	100% {opacity:1;}
+/*BASIC HTML ELEMENTS*/
+h1 {
+	font-family: 'Syne',sans-serif;
+	font-size: 4rem;
+}
+
+h2 {
+	font-family:'Syne',sans-serif;
+}
+
+#Gallery {
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+}
+
+.imgColumn {
+	flex:33%;
+	max-width:33%;
+	padding:.2em;
+}
+
+.imgColumn img {
+	margin:.4em .2em .4em .2em;
 }
