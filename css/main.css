@@ -12,7 +12,7 @@ html {
 
 body {
 	height:100vh;
-	background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.75) 15% 85%,rgba(255,255,255,0)),url('../img/background.jpg');
+	background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.85) 15% 85%,rgba(255,255,255,0)),url('../img/background.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
