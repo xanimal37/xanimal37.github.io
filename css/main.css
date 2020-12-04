@@ -80,7 +80,7 @@ nav {
 
 main {
 	grid-area:content;
-	padding:3em;
+	padding:2em;
 	line-height: 1.8;
 
 	display:flex;
@@ -104,8 +104,8 @@ h2 {
 }
 
 .imgColumn {
-	flex:33%;
-	max-width:33%;
+	flex:25%;
+	max-width:25%;
 	padding:.2em;
 
 	display:flex;
@@ -116,18 +116,53 @@ h2 {
 .imgColumn img {
 	
 	max-width: 100%;
+
+}
+
+.imgColumn div {
+	padding:0;
 	margin:.4em .2em .4em .2em;
-	box-shadow: 2px 2px 5px #dddddd;
+	box-shadow: 3px 3px 5px #bbbbbb;
+}
+
+.flag {
+	text-align: center;
+	font-size:.9em;
+}
+
+.nmgc {
+	background-color:#404d5b;
+	color:#ffffff;
+}
+
+.mrsec {
+	background-color:#faaf40;
+	color:#ffffff;
+}
+
+.icdc {
+	background-color:#99225c;
+	color:#ffffff;
+}
+
+.gagliardi {
+	background-color:#24255e;
+	color:#ffffff;
+}
+
+.ctc {
+	background-color:#7a0019;
+	color:#ffffff;
 }
 
 footer {
 	grid-area: footer;
-	padding:3em;
+	padding:2em;
 	margin-bottom:2em;
 }
 
 footer p {
-	border:3px solid #90d5d5;
+	border:3px solid #999999;
 	padding:.6em;
 }
 
@@ -137,6 +172,11 @@ footer p {
 
 	body {
 		background:none;
+	}
+
+	a:hover {
+		text-decoration: none;
+		font-weight: bolder;
 	}
 
 	#Grid {
@@ -160,7 +200,10 @@ footer p {
 	}
 
 	#ArtMenu ul li {
+		width:90%;
+		text-align: center;
 		font-size:1.2rem;
+		border-bottom:2px solid #999999;
 	}
 
 	main {
@@ -189,7 +232,7 @@ footer p {
 		margin:0;
 	}
 
-	.imgColumn img {
+	.imgColumn div {
 		margin:0 0 .8em 0;
 	}
 
@@ -224,6 +267,10 @@ footer p {
 		;
 	}
 
+	main {
+		padding:1em;
+	}
+
 	#ArtMenu ul li {
 	
 		font-size:1.2rem;
@@ -232,5 +279,51 @@ footer p {
 	.imgColumn {
 		flex:50%;
 		max-width:50%;
+	}
+
+	footer {
+		padding:1em;
+	}
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+	body {
+		background-image: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)), url('../img/background.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		}
+
+	#Grid {
+		width:100%;
+		margin:0;
+		display:grid;
+		grid-template-columns: 96px 1fr 1fr 1fr 96px;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: 
+		". header header header ."
+		". nav nav nav ."
+		". content content content ."
+		". footer footer footer ."
+		;
+	}
+
+	main {
+		padding:1em;
+		line-height: 1.8;
+	}
+
+	#ArtMenu ul li {
+	
+		font-size:1.4rem;
+	}
+
+	.imgColumn {
+		flex:50%;
+		max-width:50%;
+	}
+
+	footer {
+		padding:1em;
 	}
 }
