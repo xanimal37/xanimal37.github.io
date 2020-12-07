@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>scientific graphics</title>
+	<title>scientific graphics: table of contents images</title>
 	<!-- meta tags -->
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<!-- font -->
@@ -10,6 +10,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet"> 
 	<!-- css -->
 	<link rel="stylesheet" href="../css/main.css">
+	<!-- js -->
+	<script src="../js/modal.js"></script>
 </head>
 <body>
 	<div id="Grid">
@@ -24,7 +26,7 @@
 			<li><a href="../index.html">home</a></li>
 			<li><a id="Covers" href="../covers/index.html">covers</a></li>
 			<li><a id="Figures" href="../figures/index.html">figures</a></li>
-			<li><a id="TOC" href="index.html">table of contents</a></li>
+			<li><a id="TOC" href="index.html">toc</a></li>
 			<li><a id="Posters" href="../posters/index.html">posters</a></li>
 			<li><a id="Other" href="../other/index.html">other</a></li>
 		</ul>
@@ -33,33 +35,36 @@
 			<div id="Gallery">
 				<div class="imgColumn">
 					<div>
-					<img src="img/ICDC_toc_00.png">
+					<img class="art" src="img/ICDC_toc_00.png">
 					<p class="flag icdc">ICDC - published</p>
 					</div>
 					<div>
-					<img src="img/ICDC_toc_01.jpg">
-					<p class="flag icdc">ICDC - published</p>
-					</div>
-				</div>
-				<div class="imgColumn">
-					<div>
-					<img src="img/ICDC_toc_02.jpg">
+					<img class="art" src="img/ICDC_toc_01.jpg">
 					<p class="flag icdc">ICDC - published</p>
 					</div>
 				</div>
 				<div class="imgColumn">
 					<div>
-					<img src="img/MRSEC_toc_03.jpg">
+					<img class="art" src="img/ICDC_toc_02.jpg">
+					<p class="flag icdc">ICDC - published</p>
+					</div>
+				</div>
+				<div class="imgColumn">
+					<div>
+					<img class="art" src="img/MRSEC_toc_03.jpg">
 					<p class="flag mrsec">MRSEC - published</p>
 					</div>
 				</div>
 				<div class="imgColumn">
 					<div>
-					<img src="img/MRSEC_toc_04.jpg">
+					<img class="art" src="img/MRSEC_toc_04.jpg">
 					<p class="flag mrsec">MRSEC - published</p>
 					</div>
 				</div>
 			</div>
+			<div id="Modal" class="hidden">
+				<div id="CloseButton">close &times;</div>
+				<img id="displayImage" src=""></div>
 		</main>
 <footer>
 <p>Content created for members of the Inorganometallic Catalyst Design Center (<abbr>ICDC</abbr>), Nanoporous Materials Genome 

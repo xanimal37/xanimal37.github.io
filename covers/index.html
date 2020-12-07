@@ -10,6 +10,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">  
 	<!-- css -->
 	<link rel="stylesheet" href="../css/main.css">
+	<!-- js -->
+	<script src="../js/modal.js"></script>
 </head>
 <body>
 	<div id="Grid">
@@ -33,53 +35,56 @@
 			<div id="Gallery">
 				<div class="imgColumn">
 					<div>
-					<img src="img/ICDC_cover_01.jpg">
+					<img class="art" src="img/ICDC_cover_01.jpg">
 					<p class="flag icdc">ICDC - published</p>
 					</div>
 					<div>
-					<img src="img/MRSEC_cover_02.jpg">
+					<img class="art" src="img/MRSEC_cover_02.jpg">
 					<p class="flag mrsec">MRSEC - published</p>
 					</div>
 					<div>
-					<img src="img/NMGC_cover_00.jpg">
+					<img class="art" src="img/NMGC_cover_00.jpg">
 					<p class="flag nmgc">NMGC - published</p>
 					</div>
 				</div>
 				<div class="imgColumn">
 					<div>
-					<img src="img/NMGC_cover_05.jpg">
+					<img class="art" src="img/NMGC_cover_05.jpg">
 					<p class="flag nmgc">NMGC - published</p>
 					</div>
 					<div>
-					<img src="img/MRSEC_cover_06.jpg">
+					<img class="art" src="img/MRSEC_cover_06.jpg">
 					<p class="flag mrsec">MRSEC - published</p>
 					</div>
 					<div>
-					<img src="img/ICDC_cover_07.jpg">
+					<img class="art" src="img/ICDC_cover_07.jpg">
 					<p class="flag icdc">ICDC - unpublished</p>
 					</div>
 				</div>
 				<div class="imgColumn">
 					<div>
-					<img src="img/NMGC_cover_03.jpg">
+					<img class="art" src="img/NMGC_cover_03.jpg">
 					<p class="flag nmgc">NMGC - published</p>
 					</div>
 					<div>
-					<img src="img/NMGC_cover_04.jpg">
+					<img class="art" src="img/NMGC_cover_04.jpg">
 					<p class="flag nmgc">NMGC - published</p>
 				</div>
 				</div>
 				<div class="imgColumn">
 					<div>
-					<img src="img/NMGC_cover_06.jpg">
+					<img class="art" src="img/NMGC_cover_06.jpg">
 					<p class="flag nmgc">NMGC - pending</p>
 					</div>
 					<div>
-					<img src="img/NMGC_cover_07.jpg">
+					<img class="art" src="img/NMGC_cover_07.jpg">
 					<p class="flag nmgc">NMGC - pending</p>
 					</div>
 				</div>								
 			</div>
+			<div id="Modal" class="hidden">
+				<div id="CloseButton">close &times;</div>
+				<img id="displayImage" src=""></div>
 		</main>
 <footer>
 	<p>Content created for members of the <a href="http://icdc.umn.edu/" target="_blank">Inorganometallic Catalyst Design Center (<abbr>ICDC</abbr>)</a>, <a href="http://icdc.umn.edu/" target="_blank">Nanoporous Materials Genome 
@@ -88,5 +93,6 @@
 
 	</footer>
 	</div>
+
 </body>
 </html>
