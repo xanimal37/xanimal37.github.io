@@ -2,7 +2,6 @@ var modal;
 
 window.onload = function() { 
   
-    console.log(window.innerWidth);
     if(window.innerWidth>1199){
         modal = document.getElementById("Modal");
         AddAllListeners();
