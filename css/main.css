@@ -172,7 +172,7 @@ footer p {
 /* first is toggle image 'zoom', only on large screens*/
 @media (min-width:1199px){
 	.imgColumn div:hover {
-		cursor: crosshair;
+		cursor: zoom-in;
 	}
 }
 @media (max-width:540px) {
