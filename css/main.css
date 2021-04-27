@@ -160,6 +160,7 @@ footer {
 	grid-area: footer;
 	padding:2em;
 	margin-bottom:2em;
+	background-color:#ffffff;
 }
 
 footer p {
@@ -295,7 +296,6 @@ footer p {
 
 	footer {
 		padding:1em;
-		background-color: #ffffff;
 	}
 }
 
