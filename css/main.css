@@ -156,6 +156,11 @@ h2 {
 	color:#ffffff;
 }
 
+.other {
+	background-color:#333333;
+	color:#ffffff;
+}
+
 footer {
 	grid-area: footer;
 	padding:2em;
