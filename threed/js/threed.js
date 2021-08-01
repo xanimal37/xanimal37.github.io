@@ -14,26 +14,37 @@ class Molecule {
         this.renderer.setSize(w,h);
         this.renderer.setPixelRatio(canvas.devicePixelRatio );
 
-        //this.displayCase.appendChild(this.renderer.domElement); //append to document
-
+        // create light objects
         const ambient = new THREE.AmbientLight(0x707070);
-        const light = new THREE.DirectionalLight();
-
-        const geometry = new THREE.BoxGeometry(1,1,1);
-        const material = new THREE.MeshPhongMaterial({color:0x240210});
-
-        this.cube = new THREE.Mesh(geometry,material);
+        const light = new THREE.DirectionalLight(0xffffff,2);
 
         this.scene.background=new THREE.Color( 0xff0000 );
 
-        this.scene.add(this.cube);
         this.scene.add(light);
         this.scene.add(ambient);
+        //glft binary model
+        this.loadmodel();
 
         //add the scene to the cofWindow div of the html file
 		canvas.appendChild(this.renderer.domElement);
-
+        
         this.animate();
+    }
+
+    loadmodel() {
+        const molecule=this;
+
+        //create a loader
+        const loader = new GLTFLoader();
+
+        loader.load(
+            //url
+            'model/molecule.glb',
+            //functoin called when loaded
+            function(glb){
+                molecule.scene.add(glb.scene);
+            }
+        );
     }
 
     animate() {
@@ -46,6 +57,8 @@ class Molecule {
         this.cube.rotation.y += 0.01;
         this.renderer.render(this.scene,this.camera);
     }
+
+   
 
     
 
