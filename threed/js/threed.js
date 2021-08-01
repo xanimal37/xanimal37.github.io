@@ -1,4 +1,4 @@
-console.log('Update 444'); //debug
+console.log('Update 114'); //debug
 
 class Molecule {
     constructor(){
@@ -27,7 +27,7 @@ class Molecule {
 
         this.camera.position.z=3;
 
-        animate();
+        this.animate();
     }
 
     animate() {
