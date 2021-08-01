@@ -25,19 +25,8 @@ class Molecule {
 
         this.camera.position.z=3;
 
-        this.animate();
-    }
-
-    animate(){
-        const molecule=this;
-        requestAnimationFrame(function() {
-                molecule.animate();
-            });
-
         this.renderer.render(this.scene,this.camera);
+        
     }
 
- 
-}
-   
-    
+}    
