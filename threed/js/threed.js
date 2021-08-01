@@ -1,11 +1,18 @@
-console.log('Update 770'); //debug
+console.log('Update 333'); //debug
 
 class Molecule {
     constructor(canvas){
+        //get the window to put the rending in and get its dimensions
+		var canvas = document.getElementById("Canvas");
+		var w = canvas.scrollWidth;
+		var h = canvas.scrollHeight;
+
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75,280/280,0.1,1000);
-        this.renderer = new THREE.WebGLRenderer(canvas);
-        this.renderer.setSize(280,280);
+        this.camera = new THREE.PerspectiveCamera(75,w/h,0.1,1000);
+        this.camera.position.z=3;
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize(w,h);
+        this.renderer.setPixelRatio(canvas.devicePixelRatio );
 
         
         //this.displayCase.appendChild(this.renderer.domElement); //append to document
@@ -24,7 +31,8 @@ class Molecule {
         this.scene.add(light);
         this.scene.add(ambient);
 
-        this.camera.position.z=3;
+        //add the scene to the cofWindow div of the html file
+		canvas.appendChild(this.renderer.domElement);
 
         this.animate();
     }
