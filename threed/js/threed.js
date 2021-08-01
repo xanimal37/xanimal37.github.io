@@ -1,3 +1,5 @@
+console.log('Update 000'); //debug
+
 class Molecule {
     constructor(){
         this.scene = new THREE.Scene();
