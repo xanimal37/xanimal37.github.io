@@ -36,7 +36,7 @@ class Molecule {
             molecule.animate();}
             );
 
-        this.renderer.render(scene.scene,this.camera);
+        this.renderer.render(this.scene,this.camera);
     }
 
     
