@@ -1,4 +1,4 @@
-displayCase = document.getElementById('Canvas');
+var displayCase = document.getElementById('Canvas');
 
 class Molecule {
     constructor(){
