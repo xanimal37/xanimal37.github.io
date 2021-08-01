@@ -1,3 +1,5 @@
+displayCase = document.getElementById('Canvas');
+
 class Molecule {
     constructor(){
         this.scene = new THREE.Scene();
@@ -5,7 +7,7 @@ class Molecule {
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(window.innerWidth,window.innerHeight);
 
-        document.body.appendChild(this.renderer.domElement); //append to document
+        displayCase.appendChild(this.renderer.domElement); //append to document
 
         const geometry = new THREE.BoxGeometry(1,1,1);
         const light = new THREE.DirectionalLight(0xffffff);
