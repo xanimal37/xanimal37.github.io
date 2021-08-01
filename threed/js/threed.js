@@ -14,7 +14,6 @@ class Molecule {
         this.renderer.setSize(w,h);
         this.renderer.setPixelRatio(canvas.devicePixelRatio );
 
-        
         //this.displayCase.appendChild(this.renderer.domElement); //append to document
 
         const geometry = new THREE.BoxGeometry(1,1,1);
@@ -42,6 +41,8 @@ class Molecule {
             molecule.animate();}
             );
 
+        this.cube.rotation.x += 0.01;
+        this.cube.rotation.y += 0.01;
         this.renderer.render(this.scene,this.camera);
     }
 
