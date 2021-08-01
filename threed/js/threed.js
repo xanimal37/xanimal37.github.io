@@ -1,10 +1,10 @@
-console.log('Update 440'); //debug
+console.log('Update 770'); //debug
 
 class Molecule {
-    constructor(container){
+    constructor(canvas){
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75,280/280,0.1,1000);
-        this.renderer = new THREE.WebGLRenderer(container);
+        this.renderer = new THREE.WebGLRenderer(canvas);
         this.renderer.setSize(280,280);
 
         
@@ -19,6 +19,7 @@ class Molecule {
 
         this.cube = new THREE.Mesh(geometry,material);
 
+        this.scene.background=new THREE.Color( 0xff0000 );
         this.scene.add(this.cube);
         this.scene.add(light);
         this.scene.add(ambient);

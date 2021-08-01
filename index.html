@@ -13,6 +13,13 @@
 	<!-- js -->]
 	<script src="threed/library/three.min.js"></script>
 	<script src="threed/js/threed.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var canvas = document.getElementById('Canvas');
+			const molecule=new Molecule(canvas);
+			window.molecule = molecule; //for debugging only
+		});
+	</script>
 </head>
 <body>
 	<div id="Grid">
@@ -20,13 +27,7 @@
 			<div id="TitleDiv">
 				<h1>scientific graphics</h1>
 				<div id='Canvas'>
-					<script>
-						document.addEventListener('DOMContentLoaded',function(){
-							var displayCase = document.getElementById('Canvas');
-							const molecule=new Molecule(displayCase);
-							window.molecule = molecule; //for debugging only
-						});
-					</script>
+				<!-- scene should get added to this element-->
 					
 				</div>
 			</div>
