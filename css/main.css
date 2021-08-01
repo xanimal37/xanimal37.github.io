@@ -383,3 +383,9 @@ footer p {
 	justify-content: center;
 	align-items: center;
 }
+
+#Canvas {
+	background-color:#000000;
+	width:300px;
+	height:300px;
+}
