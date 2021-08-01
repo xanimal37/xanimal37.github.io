@@ -35,7 +35,7 @@ class Molecule {
         const molecule=this;
 
         //create a loader
-        const loader = new GLTFLoader();
+        const loader = new THREE.GLTFLoader();
 
         loader.load(
             //url
