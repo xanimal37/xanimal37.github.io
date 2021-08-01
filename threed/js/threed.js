@@ -1,13 +1,15 @@
-console.log('Update 204'); //debug
+console.log('Update 280'); //debug
 
 class Molecule {
     constructor(){
-        this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75,300/300,0.1,1000);
-        this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(300,300);
-
         this.displayCase = document.getElementById('Canvas');
+
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(75,280/280,0.1,1000);
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize(280,280);
+
+        
         this.displayCase.appendChild(this.renderer.domElement); //append to document
 
         const geometry = new THREE.BoxGeometry(1,1,1);
