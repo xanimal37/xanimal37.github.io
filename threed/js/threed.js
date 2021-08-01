@@ -16,17 +16,17 @@ class Molecule {
 
         //this.displayCase.appendChild(this.renderer.domElement); //append to document
 
-        const geometry = new THREE.BoxGeometry(1,1,1);
-        const light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(0,20,10);
         const ambient = new THREE.AmbientLight(0x707070);
 
+        const geometry = new THREE.BoxGeometry(1,1,1);
         const material = new THREE.MeshBasicMaterial({color:0x240210});
 
         this.cube = new THREE.Mesh(geometry,material);
 
         this.scene.background=new THREE.Color( 0xff0000 );
+        
         this.scene.add(this.cube);
+        this.scene.add(ambient);
 
         //add the scene to the cofWindow div of the html file
 		canvas.appendChild(this.renderer.domElement);
