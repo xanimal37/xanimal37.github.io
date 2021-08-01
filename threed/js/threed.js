@@ -18,7 +18,7 @@ class Molecule {
         const ambient = new THREE.AmbientLight(0x707070);
         const light = new THREE.DirectionalLight(0xffffff,2);
 
-        this.scene.background=new THREE.Color( 0xff0000 );
+        this.scene.background=new THREE.Color( 0x000000 );
 
         this.scene.add(light);
         this.scene.add(ambient);
