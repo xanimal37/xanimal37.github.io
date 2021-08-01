@@ -8,7 +8,7 @@ class Molecule {
         document.body.appendChild(this.renderer.domElement); //append to document
 
         const geometry = new THREE.BoxGeometry(1,1,1);
-        const light = new THREE.DirectionalLight(x0ffffff);
+        const light = new THREE.DirectionalLight(0xffffff);
         light.position.set(0,20,10);
         const ambient = new THREE.AmbientLight(0x707070);
 
