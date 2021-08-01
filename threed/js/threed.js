@@ -39,7 +39,7 @@ class Molecule {
 
         loader.load(
             //url
-            'model/molecule.glb',
+            'threed/model/molecule.glb',
             //functoin called when loaded
             function(glb){
                 molecule.scene.add(glb.scene);
