@@ -27,8 +27,6 @@ class Molecule {
 
         this.scene.background=new THREE.Color( 0xff0000 );
         this.scene.add(this.cube);
-        this.scene.add(light);
-        this.scene.add(ambient);
 
         //add the scene to the cofWindow div of the html file
 		canvas.appendChild(this.renderer.domElement);

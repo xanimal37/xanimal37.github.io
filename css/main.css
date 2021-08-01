@@ -385,7 +385,7 @@ footer p {
 }
 
 #Canvas {
-	border:2px solid red;
+	margin: 0 auto;
 	width:300px;
 	height:300px;
 }
