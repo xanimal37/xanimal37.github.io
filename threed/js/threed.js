@@ -13,7 +13,7 @@ class Molecule {
         this.renderer = new THREE.WebGLRenderer({alpha:true});
         this.renderer.setSize(w,h);
         this.renderer.setPixelRatio(canvas.devicePixelRatio );
-
+        this.renderer.setClearColor(0x000000,0);
         // create light objects
         const ambient = new THREE.AmbientLight(0x707070);
         const light = new THREE.DirectionalLight(0xffffff,2);
