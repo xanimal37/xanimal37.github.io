@@ -22,7 +22,8 @@
 				<div id='Canvas'>
 					<script>
 						document.addEventListener('DOMContentLoaded',function(){
-							const molecule=new Molecule();
+							var displayCase = document.getElementById('Canvas');
+							const molecule=new Molecule(displayCase);
 							window.molecule = molecule; //for debugging only
 						});
 					</script>

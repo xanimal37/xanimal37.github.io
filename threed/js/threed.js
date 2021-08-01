@@ -1,16 +1,14 @@
-console.log('Update799'); //debug
+console.log('Update 440'); //debug
 
 class Molecule {
-    constructor(){
-        this.displayCase = document.getElementById('Canvas');
-
+    constructor(container){
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75,280/280,0.1,1000);
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer(container);
         this.renderer.setSize(280,280);
 
         
-        this.displayCase.appendChild(this.renderer.domElement); //append to document
+        //this.displayCase.appendChild(this.renderer.domElement); //append to document
 
         const geometry = new THREE.BoxGeometry(1,1,1);
         const light = new THREE.DirectionalLight(0xffffff);
@@ -32,7 +30,7 @@ class Molecule {
 
     animate() {
         requestAnimationFrame(function() {
-            this.animate();}
+            molecule.animate();}
             );
 
         this.renderer.render(this.scene,this.camera);
