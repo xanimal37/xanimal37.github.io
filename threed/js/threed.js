@@ -37,6 +37,7 @@ class Molecule {
     }
 
     animate() {
+        const molecule=this;
         requestAnimationFrame(function() {
             molecule.animate();}
             );
