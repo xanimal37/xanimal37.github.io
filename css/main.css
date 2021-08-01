@@ -38,7 +38,7 @@ img {
 	margin:0 auto;
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 260px 80px auto auto;
+	grid-template-rows: 300px 80px auto auto;
 	grid-template-areas: 
 		". header header header ."
 		". nav nav nav ."
