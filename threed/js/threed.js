@@ -1,4 +1,4 @@
-import * as THREE from 'https://nmgc.umn.edu/threeJS/three.module.js';
+import * as THREE from 'http://nmgc.umn.edu/threeJS/three.module.js';
 
 class ThreeD {
     constructor(txt){
