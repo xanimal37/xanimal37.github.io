@@ -19,7 +19,7 @@ class Molecule {
         const light = new THREE.DirectionalLight(0xffffff,2);
 
         //set up controls
-        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
         //controls.update() must be called after any manual changes to the camera's transform
         this.camera.position.set(0,0,10);
         this.controls.update();
