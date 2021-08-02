@@ -98,6 +98,10 @@ h2 {
 	font-family:'Syne',sans-serif;
 }
 
+.backgroundDarkened p {
+	margin-bottom:1em;
+}
+
 #Gallery {
 	display:flex;
 	flex-direction:row;
