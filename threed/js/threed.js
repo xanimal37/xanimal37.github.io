@@ -15,8 +15,8 @@ class Molecule {
         this.renderer.setPixelRatio(canvas.devicePixelRatio );
         
         // create light objects
-        const ambient = new THREE.AmbientLight(0x707070);
-        const light = new THREE.DirectionalLight(0xffffff,5);
+        const ambient = new THREE.AmbientLight(0x707070,2);
+        const light = new THREE.DirectionalLight(0xffffff,2);
 
         //set up controls
         this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
