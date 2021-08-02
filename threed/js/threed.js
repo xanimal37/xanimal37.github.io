@@ -9,7 +9,7 @@ class Molecule {
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(75,w/h,0.1,1000);
-        this.camera.position.z=10;
+       
         this.renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
         this.renderer.setSize(w,h);
         this.renderer.setPixelRatio(canvas.devicePixelRatio );
@@ -17,6 +17,12 @@ class Molecule {
         // create light objects
         const ambient = new THREE.AmbientLight(0x707070);
         const light = new THREE.DirectionalLight(0xffffff,2);
+
+        //set up controls
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        //controls.update() must be called after any manual changes to the camera's transform
+        this.camera.position.set(0,0,10);
+        this.controls.update();
 
         this.scene.background=null;
         this.scene.add(light);
@@ -52,6 +58,7 @@ class Molecule {
             molecule.animate();}
             );
 
+        this.controls.update();
         this.renderer.render(this.scene,this.camera);
     }
 }    
