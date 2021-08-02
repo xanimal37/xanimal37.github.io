@@ -16,7 +16,7 @@ class Molecule {
         
         // create light objects
         const ambient = new THREE.AmbientLight(0x707070);
-        const light = new THREE.DirectionalLight(0xffffff,2);
+        const light = new THREE.DirectionalLight(0xffffff,5);
 
         //set up controls
         this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
