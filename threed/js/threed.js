@@ -18,6 +18,7 @@ class Molecule {
         const ambient = new THREE.AmbientLight(0x707070);
         const light = new THREE.DirectionalLight(0xffffff,2);
 
+        this.scene.background=null;
         this.scene.add(light);
         this.scene.add(ambient);
         //glft binary model
