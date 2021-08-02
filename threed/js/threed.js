@@ -44,7 +44,7 @@ class Molecule {
 
         loader.load(
             //url
-            'http://xanimal37.github.io/threed/model/molecule.glb',
+            'https://xanimal37.github.io/threed/model/molecule.glb',
             //functoin called when loaded
             function(glb){
                 molecule.scene.add(glb.scene);
