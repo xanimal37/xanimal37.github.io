@@ -98,6 +98,11 @@ h2 {
 	font-family:'Syne',sans-serif;
 }
 
+h3 {
+	font-family:'Syne',sans-serif;
+	font-size: 2rem;
+}
+
 .backgroundDarkened p {
 	margin-bottom:1em;
 }
