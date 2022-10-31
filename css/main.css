@@ -18,6 +18,10 @@ body {
 	background-size: cover;
 	}
 
+section {
+	margin-top:2em;
+	}
+
 a {
 	text-decoration: none;
 	color:#008080;
@@ -91,16 +95,19 @@ main {
 
 h1 {
 	font-family: 'Syne',sans-serif;
-	font-size: 4rem;
+	font-size: 3rem;
 }
 
 h2 {
+	background-color: #008080;
 	font-family:'Syne',sans-serif;
+	color:#ffffff;
+	padding-left:1em;
 }
 
 h3 {
 	font-family:'Syne',sans-serif;
-	font-size: 2rem;
+	font-size: 1.6rem;
 }
 
 .backgroundDarkened p {
