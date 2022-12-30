@@ -36,7 +36,7 @@
     <p>If we create two instances of a class, as in the following example, let's see what happens when we test for equality using "==".</p>
     <p class="code">
         public class Animal {<br>
-            String name = "Animal";<br>
+            public String kingdom = "Animal";<br>
         }<br>
 
         Animal dog = new Animal();<br>
@@ -53,11 +53,28 @@
         Animal@1cd072a9<br>
 Animal@7c75222b
     </p>
-    <p>but f we try</p>
+    <p>and if we try</p>
     <p class="code">
         System.out.println(dog.equals(cat));</p>
         <p>we get</p>
-        <p class="code">true
+        <p class="code">false
+    </p>
+    <p>So what is the point if we get the same result using the method equals() or ==?</p>
+    <p>One thing we can do with classes is override methods. This means that a class that inherits a method can have its own version of the method.
+        So we can determine what makes two objects equivalent when we compare them. If we override the equals() method in the Animal class:
+    </p>
+    <p class="code">
+        boolean equals(Animal other){<br>
+            if(other.kingdom.equals(kingdom)){<br>
+                return true;<br>
+            }<br>
+            else {<br>
+                return false;<br>
+            }<br>
+        }
+    </p>
+    <p>Now the output will be "true" because we are comparing the two objects based on one property, which they happen to have in common. This is much
+        more useful than the default method.
     </p>
 
 
