@@ -17,6 +17,7 @@
         purposes in Java. The "=" character is actually an assignment operator, that is, it peforms an operation which set something as equal to something else, 
         as in the following variable assignment:</p>
         <p class="code">int numDogs = 2;</p>
+        <p>.equals() and "==" are ways of comparing two entities, but they differ in use.</p>
     </p>
     <h3>Java types</h3>
     <p>There is more than one entity type in Java. Primitive types include byte, short, int, long, float, double, boolean and char. 
@@ -24,8 +25,40 @@
     <h3>objects</h3>
     <p>In Java, all classes inherit from Object. This includes the String class. This is why String is an object and not a primitive, as it might 
         seem to be. Because they derive from the Object class, all objects created from a cass include a method called "equals". In fact, all classes
-    inherit a method called "toString" that will output a string representation of the object. By default this is the address of the object in memory.
+    also inherit a method called "toString" that will output a string representation of the object. By default this is the address of the object in memory.
     This will become useful in examining the difference between .equals() and == in the case of non-primitives like objects.</p>
+    <p>If we test two primitives with "=="<, the result is straightforward:</p>
+    <p class="code">
+        System.out.println(4=4);<br>
+        ...<br>
+        true
+    </p>
+    <p>If we create two instances of a class, as in the following example, let's see what happens when we test for equality using "==".</p>
+    <p class="code">
+        public class Animal {<br>
+            String name = "Animal";<br>
+        }<br>
+
+        Animal dog = new Animal();<br>
+        Animal cat = new Animal();<br>
+
+        System.out.println(dog == cat);
+    </p>
+
+    <p>The output will be "false". Even though these two Animal objects have the same <i>properties</i> and so could be considered 
+        <i>equivalent</i> to each other, if we use the 
+        <span style="font-family:Arvo;color:#ffffff; background-color:#000000;">toString()</span> method that all objects have we can see that the addresses are different.
+    And that is why these two objects are not considered equal - they are different objects in memory.</p>
+    <p class="code">
+        Animal@1cd072a9<br>
+Animal@7c75222b
+    </p>
+    <p>but f we try</p>
+    <p class="code">
+        System.out.println(dog.equals(cat));</p>
+        <p>we get</p>
+        <p class="code">true
+    </p>
 
 
 </body>
