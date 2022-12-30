@@ -24,24 +24,24 @@
         Non-primitive types include String, Array, Object, and just about anything else.</p> 
     <h3>objects</h3>
     <p>In Java, all classes inherit from Object. This includes the String class. This is why String is an object and not a primitive, as it might 
-        seem to be. Because they derive from the Object class, all objects created from a cass include a method called "equals". In fact, all classes
+        seem to be. Because they derive from the Object class, all objects created from a class include a method called "equals". In fact, all classes
     also inherit a method called "toString" that will output a string representation of the object. By default this is the address of the object in memory.
     This will become useful in examining the difference between .equals() and == in the case of non-primitives like objects.</p>
     <p>If we test two primitives with "=="<, the result is straightforward:</p>
     <p class="code">
-        System.out.println(4=4);<br>
+        System.out.println(4==4);<br>
         ...<br>
         true
     </p>
     <p>If we create two instances of a class, as in the following example, let's see what happens when we test for equality using "==".</p>
     <p class="code">
         public class Animal {<br>
-            public String kingdom = "Animal";<br>
+            <span style="text-indent:4em;">public String kingdom = "Animal";</span><br>
         }<br>
-
+        <br>
         Animal dog = new Animal();<br>
         Animal cat = new Animal();<br>
-
+        <br>
         System.out.println(dog == cat);
     </p>
 
@@ -65,12 +65,12 @@ Animal@7c75222b
     </p>
     <p class="code">
         boolean equals(Animal other){<br>
-            if(other.kingdom.equals(kingdom)){<br>
-                return true;<br>
-            }<br>
-            else {<br>
-                return false;<br>
-            }<br>
+            <span style="text-indent:4em;">if(other.kingdom.equals(kingdom)){<br>
+                <span style="text-indent:8em;"></span>return true;<br>
+                <span style="text-indent:4em;">}<br>
+            <span style="text-indent:4em;"></span>else {<br>
+                <span style="text-indent:8em;"></span>return false;<br>
+                <span style="text-indent:4em;">}<br>
         }
     </p>
     <p>Now the output will be "true" because we are comparing the two objects based on one property, which they happen to have in common. This is much
