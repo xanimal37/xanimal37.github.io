@@ -10,6 +10,10 @@ html {
 	color:#202020;
 }
 
+div {
+	padding:8em, 8em,8em,8em;
+}
+
 .code {
 	background-color:#000000;
 	color:#ffffff;
