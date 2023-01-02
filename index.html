@@ -71,12 +71,12 @@ Animal@7c75222b
     </p>
     <p class="code">
         boolean equals(Animal other){<br>
-            <span style="text-indent:4em;">if(other.kingdom.equals(kingdom)){<br>
-                <span style="text-indent:8em;"></span>return true;<br>
-                <span style="text-indent:4em;">}<br>
-            <span style="text-indent:4em;"></span>else {<br>
-                <span style="text-indent:8em;"></span>return false;<br>
-                <span style="text-indent:4em;">}<br>
+            <span style="display:inline-block; padding-left:2em;">if(other.kingdom.equals(kingdom)){</span><br>
+                <span style="display:inline-block; padding-left:4em;">return true;</span><br>
+                <span style="display:inline-block; padding-left:2em;">}</span><br>
+                <span style="display:inline-block; padding-left:2em;">else {</span><br>
+                    <span style="display:inline-block; padding-left:4em;">return false;</span><br>
+                    <span style="display:inline-block; padding-left:2em;">}</span><br>
         }
     </p>
     <p>Now the output will be "true" because we are comparing the two objects based on one property, which they happen to have in common. This is much
