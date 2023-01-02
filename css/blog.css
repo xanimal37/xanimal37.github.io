@@ -23,6 +23,9 @@ div {
 .code {
 	background-color:#000000;
 	padding-left:3em;
+	padding-top:.6em;
+	padding-bottom:.6em;
+	padding-right:3em;
 	color:#ffffff;
 	font-family: 'Arvo';
 }
