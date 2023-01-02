@@ -10,13 +10,19 @@ html {
 	color:#202020;
 }
 
+main {
+	margin-left:4em;
+	margin-right:4em;
+	margin-top: 2em;
+}
+
 div {
-	padding:4em 8em 4em 8em;
+	padding:0em 2em 0em 2em;
 }
 
 .code {
 	background-color:#000000;
-	margin-left:3em;
+	padding-left:3em;
 	color:#ffffff;
 	font-family: 'Arvo';
 }
