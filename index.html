@@ -2,89 +2,63 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>xanimal37 - learning</title>
+	<title>scientific graphics</title>
 	<!-- meta tags -->
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet"> 
 	<!-- css -->
-	<link rel="stylesheet" href="css/blog.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!-- js -->
+	<script src="threed/library/three.min.js"></script>
+	<script src="threed/library/GLTFLoader.js"></script>
+	<script src="threed/library/OrbitControls.js"></script>
+	<script src="threed/js/threed.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			const molecule=new Molecule();
+		});
+	</script>
 </head>
 <body>
-    <main>
-        <h1>full-stack learning blog</h1>
-        <div>
-    <h2>what is equal?</h2>
-    <p>Why are there so many different ways to say "equals" or "is equal to" in Java? Although these all seem very similar, they serve very different
-        purposes in Java. The "=" character is actually an assignment operator, that is it peforms an operation which set something as equal to something else, 
-        as in the following variable assignment:</p>
-        <p class="code">int numDogs = 2;</p>
-        <p>.equals() and "==" are ways of comparing two entities, but they differ in use.</p>
-    </p>
-    </div>
-    <div>
-    <h3>Java types</h3>
-    <p>There is more than one entity type in Java. Primitive types include <span style="padding:.2em;font-family:Arvo;color:#ffffff; background-color:#000000;">byte, short, int, long, float, double, boolean</span> and <span style="padding:.2em;font-family:Arvo;color:#ffffff; background-color:#000000;">char</span>. 
-        Non-primitive types include String, Array, Object, and just about anything else.</p> 
-    </div>
-    <div>
-    <h3>objects</h3>
-    <p>In Java, all classes inherit from Object. This includes the String class. This is why String is an object and not a primitive, as it might 
-        seem to be. Because they derive from the Object class, all objects created from a class include a method called "equals". In fact, all classes
-    also inherit a method called "toString" that will output a string representation of the object. By default this is the address of the object in memory.
-    This will become useful in examining the difference between <span style="padding:.2em;font-family:Arvo;color:#ffffff; background-color:#000000;">.equals()</span> and <span style="padding:.2em;font-family:Arvo;color:#ffffff; background-color:#000000;">==</span> in the case of non-primitives like objects.</p>
-    <p>If we test two primitives with "==", the result is straightforward:</p>
-    <p class="code">
-        System.out.println(4==4);<br>
-        ...<br>
-        true
-    </p>
-    <p>If we create two instances of a class, as in the following example, let's see what happens when we test for equality using "==".</p>
-    <p class="code">
-        public class Animal {<br>
-            <span style="display:inline-block; padding-left:2em;">public String kingdom = "Animal";</span><br>
-        }<br>
-        <br>
-        Animal dog = new Animal();<br>
-        Animal cat = new Animal();<br>
-        <br>
-        System.out.println(dog == cat);
-    </p>
+	<div id="Grid">
+		<header>
+			<div id="TitleDiv">
+				<div id='Canvas'>
+					<!-- scene should get added to this element-->
+					</div>
+				<h1>scientific graphics</h1>
+			</div>
+		</header>
+	<nav id="ArtMenu">
+		<ul>
+			<li><a href="index.html">home</a></li>
+			<li><a id="Covers" href="covers/index.html">covers</a></li>
+			<li><a id="Figures" href="figures/index.html">figures</a></li>
+			<li><a id="TOC" href="toc/index.html">toc</a></li>
+			<li><a id="Posters" href="posters/index.html">posters</a></li>
+			<li><a id="Other" href="other/index.html">other</a></li>
+		</ul>
+	</nav>
+		<main class="backgroundDarkened">
+		<p>If you are 
+			doing research funded by the ICDC, NMGC or the UMN MRSEC and are looking for cover graphics, figures, or any graphics or animations to help communicate your research, you've come to the right place! Please email me at <a href=mailto:zeeb0002@umn.edu>zeeb0002@umn.edu</a>
+			and we can get started! I am always looking for ways to push my skills so if you don't see something you are looking for, I just haven't had the opportunity to do it yet!</p>
+			<p>'But,' you say, 'the science should stand for itself. I don't need to pretty it up!' That's true. You don't need to 'pretty it up'. But you do need to present
+				your research in a way that other people can understand it. Not so that they can immediately grasp the complicated formulas and principles, but so that they can 
+				understand the flow and relationships of the information that you are showing them. And this is true whether you are creating a table of contents graphic or a complex animation.
+			</p>
+		<p>I also feature some personal projects on this site. All images are tagged with their origin to clearly distinguish ownership. The graphics owned by the University of Minnesota or other are shown here solely to show examples of past work. If you would like to 
+			use the images you will have to contact the University or the center the image was created for. The published images' copyrights may be owned by the respective publication.</p>
+		</main>
 
-    <p>The output will be "false". Even though these two Animal objects have the same <i>properties</i> and so could be considered 
-        <i>equivalent</i> to each other, if we use the 
-        <span style="padding:.2em;font-family:Arvo;color:#ffffff; background-color:#000000;">toString()</span> method that all objects have we can see that the addresses are different.
-    And that is why these two objects are not considered equal - they are different objects in memory.</p>
-    <p class="code">
-        Animal@1cd072a9<br>
-Animal@7c75222b
-    </p>
-    <p>and if we try</p>
-    <p class="code">
-        System.out.println(dog.equals(cat));</p>
-        <p>we get</p>
-        <p class="code">false
-    </p>
-    <p>So what is the point if we get the same result using the method equals() or ==?</p>
-    <p>One thing we can do with classes is override methods. This means that a class that inherits a method can have its own version of the method.
-        So we can determine what makes two objects equivalent when we compare them. If we override the equals() method in the Animal class:
-    </p>
-    <p class="code">
-        boolean equals(Animal other){<br>
-            <span style="display:inline-block; padding-left:2em;">if(other.kingdom.equals(kingdom)){</span><br>
-                <span style="display:inline-block; padding-left:4em;">return true;</span><br>
-                <span style="display:inline-block; padding-left:2em;">}</span><br>
-                <span style="display:inline-block; padding-left:2em;">else {</span><br>
-                    <span style="display:inline-block; padding-left:4em;">return false;</span><br>
-                    <span style="display:inline-block; padding-left:2em;">}</span><br>
-        }
-    </p>
-    <p>Now the output will be "true" because we are comparing the two objects based on one property, which they happen to have in common. This is much
-        more useful than the default method.
-    </p>
-</div>
-</main>
+<footer>
+<p>Content created for members of the <a href="http://icdc.umn.edu/" target="_blank">Inorganometallic Catalyst Design Center (<abbr>ICDC</abbr>)</a>, <a href="http://icdc.umn.edu/" target="_blank">Nanoporous Materials Genome 
+	Center (<abbr>NMGC</abbr>)</a> and the <a href="http://icdc.umn.edu/" target="_blank">University of Minnesota Materials Research Science &amp; Engineering Center (<abbr>UMN MRSEC</abbr>)</a> is 
+	copyright© 2021 its respective center and the University of Minnesota. All other content is copyright© 2021 L. Zeeb.</p>
 
-
+	</footer>
+	</div>
 </body>
 </html>
