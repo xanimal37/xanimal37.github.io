@@ -42,7 +42,7 @@ img {
 	margin:0 auto;
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 380px 80px auto auto;
+	grid-template-rows: 380px auto auto auto;
 	grid-template-areas: 
 		". header header header ."
 		". nav nav nav ."
@@ -65,8 +65,7 @@ header {
 
 nav {
 	grid-area:nav;
-	display: flex;
-	justify-content: center;
+
 }
 
 #ArtMenu ul {
